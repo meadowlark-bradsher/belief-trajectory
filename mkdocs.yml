@@ -1,0 +1,54 @@
+site_name: Belief Trajectory Generator
+site_description: Synthetic trajectories for MAST failure mode stress testing
+site_url: https://meadowlark-bradsher.github.io/belief-trajectory/
+
+theme:
+  name: material
+  palette:
+    scheme: slate
+    primary: indigo
+    accent: cyan
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - content.code.copy
+
+nav:
+  - Home: index.md
+  - Trajectory Archetypes:
+    - Overview: archetypes/index.md
+    - T1 - Smooth Halving: archetypes/t1.md
+    - T2 - Early Collapse: archetypes/t2.md
+    - T3 - Plateau: archetypes/t3.md
+    - T4 - Redundant Loop: archetypes/t4.md
+    - T5 - Multi-modal: archetypes/t5.md
+    - T6 - Prediction Mismatch: archetypes/t6.md
+    - T7 - Late Shock: archetypes/t7.md
+    - T8 - Wrong Verification: archetypes/t8.md
+  - MAST Failure Modes:
+    - Overview: mast/index.md
+    - FM-1.x Specification: mast/fm1.md
+    - FM-2.x Belief: mast/fm2.md
+    - FM-3.x Verification: mast/fm3.md
+  - Overlays:
+    - Prediction Overlays: overlays/prediction.md
+    - Termination Overlays: overlays/termination.md
+  - RL Integration:
+    - Canonical Example: rl/canonical-example.md
+    - Reward Shaping: rl/reward-shaping.md
+
+markdown_extensions:
+  - tables
+  - admonition
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_javascript:
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+plugins:
+  - search
