@@ -99,8 +99,8 @@ def load_questions(questions_path: str | Path) -> list[Question]:
 
 
 def load_cuq_dataset(
-    questions_path: str | Path = "flan-oracle/cuq/release/questions.jsonl",
-    items_path: str | Path = "flan-oracle/cuq/release/items.txt",
+    questions_path: str | Path = "data/questions.jsonl",
+    items_path: str | Path = "data/items.txt",
     base_path: Optional[str | Path] = None
 ) -> CUQDataset:
     """Load the complete CUQ dataset.

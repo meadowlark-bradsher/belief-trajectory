@@ -8,8 +8,8 @@ import json
 @dataclass
 class DataConfig:
     """Paths to CUQ dataset files."""
-    questions_path: str = "flan-oracle/cuq/release/questions.jsonl"
-    items_path: str = "flan-oracle/cuq/release/items.txt"
+    questions_path: str = "data/questions.jsonl"
+    items_path: str = "data/items.txt"
 
 
 @dataclass

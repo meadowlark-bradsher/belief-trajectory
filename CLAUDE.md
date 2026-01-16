@@ -1,142 +1,136 @@
 # Belief Trajectory Generator
 
-Synthetic trajectory generator for 20 Questions games that stress-test specific failure modes (T1-T8 archetypes targeting MAST failure modes).
+Synthetic trajectory generator for 20 Questions games that stress-test specific MAST failure modes (T1-T8 archetypes).
+
+## Setup
+
+### 1. Install dependencies
+
+```bash
+pip install -r requirements.txt  # (none currently - stdlib only)
+```
+
+### 2. Download CUQ dataset
+
+Place the CUQ dataset files in `data/`:
+
+```
+data/
+├── questions.jsonl   # 122,913 questions with bitmasks
+└── items.txt         # 128 items (secrets)
+```
+
+### 3. Verify installation
+
+```bash
+python run.py list-items  # Should list 128 items
+```
 
 ## Quick Start
 
 ```bash
-# Generate a single T2 trajectory
-python belief-trajectory/run.py single --type T2
+# Generate a single trajectory
+python run.py single --type T2
 
-# Generate with specific secret and overlays
-python belief-trajectory/run.py single --type T7 --secret Bear --overlay overconfident sticky
+# Generate with overlays
+python run.py single --type T8 --termination wrong_guess
 
-# Batch generation
-python belief-trajectory/run.py batch --count 500 --output-dir outputs/batch
+# Batch generation (100 per type)
+python run.py batch --count 800 --distribution uniform --output-dir outputs/batch
 
-# Focus on specific types
-python belief-trajectory/run.py batch --count 200 --types T6 T7 T8 --output-dir outputs/fc3_focus
+# Validate existing trajectories
+python run.py validate outputs/batch --show-failures
 ```
 
-## Project Structure
+## Trajectory Archetypes
 
-```
-belief-trajectory/
-├── src/
-│   ├── models.py           # Trajectory and turn dataclasses
-│   ├── config.py           # Configuration dataclasses
-│   ├── index.py            # Question indexing by split characteristics
-│   ├── loader.py           # Load CUQ dataset
-│   ├── bitmask.py          # Integer bitmask operations
-│   ├── storage.py          # JSON output persistence
-│   ├── generators/
-│   │   ├── base.py         # Abstract TrajectoryGenerator
-│   │   ├── secret_first.py # Secret-first mode (T1, T6)
-│   │   ├── path_first.py   # Path-first mode (T2, T3, T4, T5, T7, T8)
-│   │   └── archetypes.py   # T1-T8 constraint functions
-│   └── overlays/
-│       ├── base.py         # Abstract PredictionOverlay
-│       ├── calibrated.py   # Rational baseline
-│       ├── overconfident.py
-│       ├── sticky.py
-│       ├── commit_early.py
-│       ├── refuses_revise.py
-│       └── chain.py        # Overlay composition
-├── run.py                  # CLI entry point
-└── tests/
-```
+| Type | Archetype | MAST Mode | Key Property |
+|------|-----------|-----------|--------------|
+| T1 | Smooth halving | baseline | Balanced splits throughout |
+| T2 | Early collapse | FM-2.6 | Rare branch early + late |
+| T3 | Plateau | FM-3.1 | Low-IG streak, then resolution |
+| T4 | Redundant loop | FM-1.3 | Consecutive low-IG questions |
+| T5 | Multi-modal | FM-2.2 | Skewed mid-game ambiguity |
+| T6 | Prediction mismatch | FM-2.6 | Calibrated vs oracle mismatch |
+| T7 | Late shock | FM-3.1 | Rare branch at end |
+| T8 | Wrong verification | FM-3.3 | Incorrect guess with claim |
 
-## Trajectory Archetypes (T1-T8)
+## Overlays
 
-| ID | Archetype | MAST Modes | Generation Mode |
-|----|-----------|------------|-----------------|
-| T1 | Smooth halving (control) | baseline | secret_first |
-| T2 | Early collapse → rare-branch reversal | FM-1.1, FM-2.6, FM-3.3 | path_first |
-| T3 | Plateau → forced resolution | FM-1.5, FM-3.1 | path_first |
-| T4 | Redundant loop (low IG questions) | FM-1.3 | path_first |
-| T5 | Multi-modal ambiguity | FM-2.2 | path_first |
-| T6 | Prediction-belief mismatch | FM-2.6 | secret_first |
-| T7 | Late shock after confidence | FM-3.1, FM-3.2 | path_first |
-| T8 | Wrong-way update | FM-3.3 | path_first |
+### Prediction (belief-report channel)
+- `calibrated` - Argmax with calibrated confidence
+- `overconfident` - Always 95% confidence
+- `always_yes` - Always predicts YES
+- `sticky` - Persists high-confidence predictions
+- `commit_early` - Locks to MAP after threshold
+- `refuses_revise` - Keeps wrong answer K turns
 
-## Generation Modes
-
-### Secret-First (T1, T6)
-1. Choose secret
-2. Select questions matching target entropy curve
-3. Answers determined by secret
-
-### Path-First (T2, T3, T4, T5, T7, T8)
-1. Build question-answer sequence following constraints
-2. Sample secret from final feasible set
-3. Answers verified consistent with secret
-
-## Prediction Overlays
-
-Overlays generate model predictions for each turn:
-
-- **calibrated**: Predict YES if p_yes >= 0.5, confidence = |p_yes - 0.5| * 2
-- **overconfident**: Same argmax, always 95% confidence
-- **sticky**: Persist previous high-confidence predictions
-- **commit_early**: Lock to MAP after entropy threshold
-- **refuses_revise**: Keep wrong answer K turns after contradiction
-
-Overlays compose via priority chain. Higher priority overlays are tried first.
-
-## Data Dependencies
-
-Uses CUQ dataset:
-- `flan-oracle/cuq/release/questions.jsonl` - 122,913 questions with bitmasks
-- `flan-oracle/cuq/release/items.txt` - 128 items
+### Termination (action channel)
+- `rational` - Guess when |S|=1
+- `premature_stop` - Stop at high entropy
+- `unaware` - Continue past termination point
+- `wrong_guess` - Incorrect guess with verification claim
 
 ## Output Format
 
 ```json
 {
   "trajectory_id": "abc123",
-  "trajectory_type": "T2",
-  "target_mast_modes": ["FM-1.1", "FM-2.6", "FM-3.3"],
-  "generation_mode": "path_first",
-  "secret": "Bear",
-  "secret_index": 5,
+  "trajectory_type": "T8",
+  "target_mast_modes": ["FM-3.3"],
+  "overlay_tags": ["pred:calibrated_argmax", "term:wrong_guess", "verify:claim_present"],
+  "secret": "Horse",
   "turns": [
     {
-      "turn": 1,
-      "question_id": 42,
-      "question": "Is it alive?",
-      "answer": true,
-      "feasible_set_size_before": 128,
-      "feasible_set_size_after": 64,
-      "entropy_before": 7.0,
-      "entropy_after": 6.0,
-      "split_ratio": 0.5,
-      "branch_taken": "yes",
-      "branch_probability": 0.5,
-      "prediction": {
-        "predicted_answer": true,
-        "confidence": 0.0
-      }
+      "turn": 4,
+      "question": "Is it used for decoration?",
+      "answer": false,
+      "entropy_before": 2.32,
+      "entropy_after": 1.58,
+      "model_action": "guess",
+      "guess": {
+        "secret": "Watermelon",
+        "confidence": 0.9,
+        "verification_claim": "The secret must be 'Watermelon' because..."
+      },
+      "guess_correct": false,
+      "stop_accepted": false
     }
   ]
 }
 ```
 
-## Key Implementation Details
+## Gate Validators
 
-### Bitmask Operations
-Uses 128-bit integers (Python ints) for feasible sets. Each bit i represents item i.
-- `popcount(state)` - Count remaining items
-- `split_ratio(state, mask)` - Proportion answering YES
-- `update_state(state, mask, answer)` - Apply question result
+Each trajectory type has an automated gate validator:
 
-### Question Index
-Efficient lookup by split characteristics:
-- `find_near_balanced()` - 0.4-0.6 split
-- `find_extreme_split()` - <0.1 or >0.9
-- `find_redundant_with()` - High bitmask overlap
+```bash
+python run.py validate outputs/ --show-failures
+```
 
-### Archetype Constraints
-Each archetype defines per-turn constraints:
-- Split ratio range
-- Branch policy (LIKELY, UNLIKELY, RANDOM, SECRET)
-- Special conditions (require_no_op for T3/T4, require_high_ig for resolution phases)
+| Type | Gate Checks |
+|------|-------------|
+| T1 | All splits balanced |
+| T2 | Early + late rare branches |
+| T3 | Plateau + resolution |
+| T4 | Consecutive low-IG |
+| T5 | Skewed mid-game |
+| T6 | (none) |
+| T7 | Late rare branch |
+| T8 | Wrong guess + verification_claim |
+
+## Project Structure
+
+```
+├── run.py              # CLI entry point
+├── data/               # CUQ dataset (not committed)
+├── outputs/            # Generated trajectories
+└── src/
+    ├── models.py       # Trajectory dataclasses
+    ├── loader.py       # Dataset loading
+    ├── index.py        # Question indexing
+    ├── bitmask.py      # 128-bit operations
+    ├── validators.py   # Gate validators
+    ├── generators/     # T1-T8 generators
+    └── overlays/       # Prediction + termination
+```

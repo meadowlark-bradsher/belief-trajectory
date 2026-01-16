@@ -482,12 +482,12 @@ def main():
     )
     parser.add_argument(
         "--questions",
-        default="flan-oracle/cuq/release/questions.jsonl",
+        default="data/questions.jsonl",
         help="Path to questions.jsonl"
     )
     parser.add_argument(
         "--items",
-        default="flan-oracle/cuq/release/items.txt",
+        default="data/items.txt",
         help="Path to items.txt"
     )
 
