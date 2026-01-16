@@ -1,0 +1,245 @@
+{
+  "trajectory_id": "2e6806ec",
+  "trajectory_type": "T4",
+  "target_mast_modes": [
+    "FM-1.3"
+  ],
+  "generation_mode": "path_first",
+  "secret": "Train",
+  "secret_index": 119,
+  "turns": [
+    {
+      "turn": 1,
+      "question_id": 243197,
+      "question": "Is the object a board puzzle game?",
+      "answer": false,
+      "feasible_set_size_before": 128,
+      "feasible_set_size_after": 127,
+      "entropy_before": 7.0,
+      "entropy_after": 6.9886846867721655,
+      "split_ratio": 0.0078125,
+      "branch_taken": "no",
+      "branch_probability": 0.9921875,
+      "model_action": "continue",
+      "guess": null,
+      "guess_correct": null,
+      "stop_reason": null,
+      "stop_accepted": null,
+      "prediction": {
+        "predicted_answer": false,
+        "confidence": 0.984375
+      }
+    },
+    {
+      "turn": 2,
+      "question_id": 491,
+      "question": "Is it a bracelet?",
+      "answer": false,
+      "feasible_set_size_before": 127,
+      "feasible_set_size_after": 126,
+      "entropy_before": 6.9886846867721655,
+      "entropy_after": 6.977279923499917,
+      "split_ratio": 0.007874015748031496,
+      "branch_taken": "no",
+      "branch_probability": 0.9921259842519685,
+      "model_action": "continue",
+      "guess": null,
+      "guess_correct": null,
+      "stop_reason": null,
+      "stop_accepted": null,
+      "prediction": {
+        "predicted_answer": false,
+        "confidence": 0.984251968503937
+      }
+    },
+    {
+      "turn": 3,
+      "question_id": 487,
+      "question": "Is it a hat?",
+      "answer": false,
+      "feasible_set_size_before": 126,
+      "feasible_set_size_after": 125,
+      "entropy_before": 6.977279923499917,
+      "entropy_after": 6.965784284662087,
+      "split_ratio": 0.007936507936507936,
+      "branch_taken": "no",
+      "branch_probability": 0.9920634920634921,
+      "model_action": "continue",
+      "guess": null,
+      "guess_correct": null,
+      "stop_reason": null,
+      "stop_accepted": null,
+      "prediction": {
+        "predicted_answer": false,
+        "confidence": 0.9841269841269842
+      }
+    },
+    {
+      "turn": 4,
+      "question_id": 115344,
+      "question": "Is it an lake?",
+      "answer": false,
+      "feasible_set_size_before": 125,
+      "feasible_set_size_after": 124,
+      "entropy_before": 6.965784284662087,
+      "entropy_after": 6.954196310386875,
+      "split_ratio": 0.008,
+      "branch_taken": "no",
+      "branch_probability": 0.992,
+      "model_action": "continue",
+      "guess": null,
+      "guess_correct": null,
+      "stop_reason": null,
+      "stop_accepted": null,
+      "prediction": {
+        "predicted_answer": false,
+        "confidence": 0.984
+      }
+    },
+    {
+      "turn": 5,
+      "question_id": 133608,
+      "question": "Is it a celestial object?",
+      "answer": false,
+      "feasible_set_size_before": 124,
+      "feasible_set_size_after": 123,
+      "entropy_before": 6.954196310386875,
+      "entropy_after": 6.94251450533924,
+      "split_ratio": 0.008064516129032258,
+      "branch_taken": "no",
+      "branch_probability": 0.9919354838709677,
+      "model_action": "continue",
+      "guess": null,
+      "guess_correct": null,
+      "stop_reason": null,
+      "stop_accepted": null,
+      "prediction": {
+        "predicted_answer": false,
+        "confidence": 0.9838709677419355
+      }
+    },
+    {
+      "turn": 6,
+      "question_id": 186798,
+      "question": "Is it an tropical flower?",
+      "answer": false,
+      "feasible_set_size_before": 123,
+      "feasible_set_size_after": 122,
+      "entropy_before": 6.94251450533924,
+      "entropy_after": 6.930737337562887,
+      "split_ratio": 0.008130081300813009,
+      "branch_taken": "no",
+      "branch_probability": 0.991869918699187,
+      "model_action": "continue",
+      "guess": null,
+      "guess_correct": null,
+      "stop_reason": null,
+      "stop_accepted": null,
+      "prediction": {
+        "predicted_answer": false,
+        "confidence": 0.983739837398374
+      }
+    },
+    {
+      "turn": 7,
+      "question_id": 323,
+      "question": "Is it used for cutting?",
+      "answer": false,
+      "feasible_set_size_before": 122,
+      "feasible_set_size_after": 121,
+      "entropy_before": 6.930737337562887,
+      "entropy_after": 6.918863237274595,
+      "split_ratio": 0.00819672131147541,
+      "branch_taken": "no",
+      "branch_probability": 0.9918032786885246,
+      "model_action": "continue",
+      "guess": null,
+      "guess_correct": null,
+      "stop_reason": null,
+      "stop_accepted": null,
+      "prediction": {
+        "predicted_answer": false,
+        "confidence": 0.9836065573770492
+      }
+    },
+    {
+      "turn": 8,
+      "question_id": 22479,
+      "question": "Is the object usually found indoors?",
+      "answer": true,
+      "feasible_set_size_before": 121,
+      "feasible_set_size_after": 61,
+      "entropy_before": 6.918863237274595,
+      "entropy_after": 5.930737337562887,
+      "split_ratio": 0.5041322314049587,
+      "branch_taken": "yes",
+      "branch_probability": 0.5041322314049587,
+      "model_action": "continue",
+      "guess": null,
+      "guess_correct": null,
+      "stop_reason": null,
+      "stop_accepted": null,
+      "prediction": {
+        "predicted_answer": true,
+        "confidence": 0.008264462809917328
+      }
+    },
+    {
+      "turn": 9,
+      "question_id": 221025,
+      "question": "Is it a handheld item?",
+      "answer": false,
+      "feasible_set_size_before": 61,
+      "feasible_set_size_after": 31,
+      "entropy_before": 5.930737337562887,
+      "entropy_after": 4.954196310386875,
+      "split_ratio": 0.4918032786885246,
+      "branch_taken": "no",
+      "branch_probability": 0.5081967213114754,
+      "model_action": "continue",
+      "guess": null,
+      "guess_correct": null,
+      "stop_reason": null,
+      "stop_accepted": null,
+      "prediction": {
+        "predicted_answer": false,
+        "confidence": 0.016393442622950838
+      }
+    },
+    {
+      "turn": 10,
+      "question_id": 736,
+      "question": "Does the object have small parts?",
+      "answer": true,
+      "feasible_set_size_before": 31,
+      "feasible_set_size_after": 16,
+      "entropy_before": 4.954196310386875,
+      "entropy_after": 4.0,
+      "split_ratio": 0.5161290322580645,
+      "branch_taken": "yes",
+      "branch_probability": 0.5161290322580645,
+      "model_action": "guess",
+      "guess": {
+        "secret_index": 119,
+        "secret": "Train",
+        "confidence": 0.0625
+      },
+      "guess_correct": true,
+      "stop_reason": null,
+      "stop_accepted": true,
+      "prediction": {
+        "predicted_answer": true,
+        "confidence": 0.032258064516129004
+      }
+    }
+  ],
+  "overlay_tags": [
+    "pred:calibrated_argmax",
+    "term:rational",
+    "term:guess_at_budget"
+  ],
+  "metadata": {
+    "seed": null,
+    "num_items": 128
+  }
+}

@@ -1,0 +1,157 @@
+{
+  "trajectory_id": "97518b8e",
+  "trajectory_type": "T6",
+  "target_mast_modes": [
+    "FM-2.6"
+  ],
+  "generation_mode": "secret_first",
+  "secret": "Watermelon",
+  "secret_index": 126,
+  "turns": [
+    {
+      "turn": 1,
+      "question_id": 125174,
+      "question": "Is the object made of another inorganic material?",
+      "answer": false,
+      "feasible_set_size_before": 128,
+      "feasible_set_size_after": 38,
+      "entropy_before": 7.0,
+      "entropy_after": 5.247927513443585,
+      "split_ratio": 0.703125,
+      "branch_taken": "no",
+      "branch_probability": 0.296875,
+      "model_action": "continue",
+      "guess": null,
+      "guess_correct": null,
+      "stop_reason": null,
+      "stop_accepted": null,
+      "prediction": {
+        "predicted_answer": true,
+        "confidence": 0.40625
+      }
+    },
+    {
+      "turn": 2,
+      "question_id": 81973,
+      "question": "Is the object something you can handle?",
+      "answer": true,
+      "feasible_set_size_before": 38,
+      "feasible_set_size_after": 27,
+      "entropy_before": 5.247927513443585,
+      "entropy_after": 4.754887502163468,
+      "split_ratio": 0.7105263157894737,
+      "branch_taken": "yes",
+      "branch_probability": 0.7105263157894737,
+      "model_action": "continue",
+      "guess": null,
+      "guess_correct": null,
+      "stop_reason": null,
+      "stop_accepted": null,
+      "prediction": {
+        "predicted_answer": true,
+        "confidence": 0.42105263157894735
+      }
+    },
+    {
+      "turn": 3,
+      "question_id": 60238,
+      "question": "Is it something that is usually found inside a household?",
+      "answer": false,
+      "feasible_set_size_before": 27,
+      "feasible_set_size_after": 8,
+      "entropy_before": 4.754887502163468,
+      "entropy_after": 3.0,
+      "split_ratio": 0.7037037037037037,
+      "branch_taken": "no",
+      "branch_probability": 0.2962962962962963,
+      "model_action": "continue",
+      "guess": null,
+      "guess_correct": null,
+      "stop_reason": null,
+      "stop_accepted": null,
+      "prediction": {
+        "predicted_answer": true,
+        "confidence": 0.40740740740740744
+      }
+    },
+    {
+      "turn": 4,
+      "question_id": 3623,
+      "question": "Is it an object found in a grassy area?",
+      "answer": true,
+      "feasible_set_size_before": 8,
+      "feasible_set_size_after": 6,
+      "entropy_before": 3.0,
+      "entropy_after": 2.584962500721156,
+      "split_ratio": 0.75,
+      "branch_taken": "yes",
+      "branch_probability": 0.75,
+      "model_action": "continue",
+      "guess": null,
+      "guess_correct": null,
+      "stop_reason": null,
+      "stop_accepted": null,
+      "prediction": {
+        "predicted_answer": true,
+        "confidence": 0.5
+      }
+    },
+    {
+      "turn": 5,
+      "question_id": 153492,
+      "question": "Is it larger than a airplane?",
+      "answer": false,
+      "feasible_set_size_before": 6,
+      "feasible_set_size_after": 2,
+      "entropy_before": 2.584962500721156,
+      "entropy_after": 1.0,
+      "split_ratio": 0.6666666666666666,
+      "branch_taken": "no",
+      "branch_probability": 0.33333333333333337,
+      "model_action": "continue",
+      "guess": null,
+      "guess_correct": null,
+      "stop_reason": null,
+      "stop_accepted": null,
+      "prediction": {
+        "predicted_answer": true,
+        "confidence": 0.33333333333333326
+      }
+    },
+    {
+      "turn": 6,
+      "question_id": 11301,
+      "question": "Is the object an animate object?",
+      "answer": false,
+      "feasible_set_size_before": 2,
+      "feasible_set_size_after": 1,
+      "entropy_before": 1.0,
+      "entropy_after": 0.0,
+      "split_ratio": 0.5,
+      "branch_taken": "no",
+      "branch_probability": 0.5,
+      "model_action": "guess",
+      "guess": {
+        "secret_index": 126,
+        "secret": "Watermelon",
+        "confidence": 1.0
+      },
+      "guess_correct": true,
+      "stop_reason": null,
+      "stop_accepted": true,
+      "prediction": {
+        "predicted_answer": false,
+        "confidence": 0.0
+      }
+    }
+  ],
+  "overlay_tags": [
+    "pred:calibrated_argmax",
+    "term:rational",
+    "term:guess_at_end"
+  ],
+  "metadata": {
+    "seed": null,
+    "num_items": 128
+  }
+}

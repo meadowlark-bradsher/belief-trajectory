@@ -1,0 +1,135 @@
+{
+  "trajectory_id": "0886d79c",
+  "trajectory_type": "T2",
+  "target_mast_modes": [
+    "FM-2.6"
+  ],
+  "generation_mode": "path_first",
+  "secret": "Pillow",
+  "secret_index": 82,
+  "turns": [
+    {
+      "turn": 1,
+      "question_id": 35228,
+      "question": "Is the object a piece of decoration or art?",
+      "answer": true,
+      "feasible_set_size_before": 128,
+      "feasible_set_size_after": 16,
+      "entropy_before": 7.0,
+      "entropy_after": 4.0,
+      "split_ratio": 0.125,
+      "branch_taken": "yes",
+      "branch_probability": 0.125,
+      "model_action": "continue",
+      "guess": null,
+      "guess_correct": null,
+      "stop_reason": null,
+      "stop_accepted": null,
+      "prediction": {
+        "predicted_answer": false,
+        "confidence": 0.75
+      }
+    },
+    {
+      "turn": 2,
+      "question_id": 1804,
+      "question": "Is the object a type of container?",
+      "answer": false,
+      "feasible_set_size_before": 16,
+      "feasible_set_size_after": 14,
+      "entropy_before": 4.0,
+      "entropy_after": 3.807354922057604,
+      "split_ratio": 0.125,
+      "branch_taken": "no",
+      "branch_probability": 0.875,
+      "model_action": "continue",
+      "guess": null,
+      "guess_correct": null,
+      "stop_reason": null,
+      "stop_accepted": null,
+      "prediction": {
+        "predicted_answer": false,
+        "confidence": 0.75
+      }
+    },
+    {
+      "turn": 3,
+      "question_id": 62829,
+      "question": "Is it a necklace with a pendant?",
+      "answer": false,
+      "feasible_set_size_before": 14,
+      "feasible_set_size_after": 12,
+      "entropy_before": 3.807354922057604,
+      "entropy_after": 3.584962500721156,
+      "split_ratio": 0.14285714285714285,
+      "branch_taken": "no",
+      "branch_probability": 0.8571428571428572,
+      "model_action": "continue",
+      "guess": null,
+      "guess_correct": null,
+      "stop_reason": null,
+      "stop_accepted": null,
+      "prediction": {
+        "predicted_answer": false,
+        "confidence": 0.7142857142857143
+      }
+    },
+    {
+      "turn": 4,
+      "question_id": 41928,
+      "question": "Is it an object used for artistic expression?",
+      "answer": false,
+      "feasible_set_size_before": 12,
+      "feasible_set_size_after": 2,
+      "entropy_before": 3.584962500721156,
+      "entropy_after": 1.0,
+      "split_ratio": 0.8333333333333334,
+      "branch_taken": "no",
+      "branch_probability": 0.16666666666666663,
+      "model_action": "continue",
+      "guess": null,
+      "guess_correct": null,
+      "stop_reason": null,
+      "stop_accepted": null,
+      "prediction": {
+        "predicted_answer": true,
+        "confidence": 0.6666666666666667
+      }
+    },
+    {
+      "turn": 5,
+      "question_id": 293194,
+      "question": "Is it something that one would use to sleep on?",
+      "answer": true,
+      "feasible_set_size_before": 2,
+      "feasible_set_size_after": 1,
+      "entropy_before": 1.0,
+      "entropy_after": 0.0,
+      "split_ratio": 0.5,
+      "branch_taken": "yes",
+      "branch_probability": 0.5,
+      "model_action": "guess",
+      "guess": {
+        "secret_index": 82,
+        "secret": "Pillow",
+        "confidence": 1.0
+      },
+      "guess_correct": true,
+      "stop_reason": null,
+      "stop_accepted": true,
+      "prediction": {
+        "predicted_answer": false,
+        "confidence": 0.0
+      }
+    }
+  ],
+  "overlay_tags": [
+    "pred:calibrated_argmax",
+    "term:rational",
+    "term:guess_at_end"
+  ],
+  "metadata": {
+    "seed": null,
+    "num_items": 128
+  }
+}

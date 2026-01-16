@@ -1,0 +1,12 @@
+{
+  "T8": {
+    "requested": 100,
+    "generated": 100,
+    "gate_passed": 100,
+    "gate_failed": 0,
+    "gen_failures": 0,
+    "resamples": 0,
+    "avg_initial_entropy": 7.0,
+    "avg_final_entropy": 0.0
+  }
+}

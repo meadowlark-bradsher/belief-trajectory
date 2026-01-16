@@ -1,0 +1,285 @@
+{
+  "trajectory_id": "fec49b35",
+  "trajectory_type": "T3",
+  "target_mast_modes": [
+    "FM-3.1"
+  ],
+  "generation_mode": "path_first",
+  "secret": "Shovel",
+  "secret_index": 103,
+  "turns": [
+    {
+      "turn": 1,
+      "question_id": 13022,
+      "question": "Is it a evergreen tree?",
+      "answer": false,
+      "feasible_set_size_before": 128,
+      "feasible_set_size_after": 127,
+      "entropy_before": 7.0,
+      "entropy_after": 6.9886846867721655,
+      "split_ratio": 0.0078125,
+      "branch_taken": "no",
+      "branch_probability": 0.9921875,
+      "model_action": "continue",
+      "guess": null,
+      "guess_correct": null,
+      "stop_reason": null,
+      "stop_accepted": null,
+      "prediction": {
+        "predicted_answer": false,
+        "confidence": 0.984375
+      }
+    },
+    {
+      "turn": 2,
+      "question_id": 358,
+      "question": "Is it a stubby herb?",
+      "answer": false,
+      "feasible_set_size_before": 127,
+      "feasible_set_size_after": 126,
+      "entropy_before": 6.9886846867721655,
+      "entropy_after": 6.977279923499917,
+      "split_ratio": 0.007874015748031496,
+      "branch_taken": "no",
+      "branch_probability": 0.9921259842519685,
+      "model_action": "continue",
+      "guess": null,
+      "guess_correct": null,
+      "stop_reason": null,
+      "stop_accepted": null,
+      "prediction": {
+        "predicted_answer": false,
+        "confidence": 0.984251968503937
+      }
+    },
+    {
+      "turn": 3,
+      "question_id": 101902,
+      "question": "Is the object a device with a microphone?",
+      "answer": false,
+      "feasible_set_size_before": 126,
+      "feasible_set_size_after": 125,
+      "entropy_before": 6.977279923499917,
+      "entropy_after": 6.965784284662087,
+      "split_ratio": 0.007936507936507936,
+      "branch_taken": "no",
+      "branch_probability": 0.9920634920634921,
+      "model_action": "stop",
+      "guess": null,
+      "guess_correct": null,
+      "stop_reason": "Premature stop at entropy 6.97 bits, |S|=125",
+      "stop_accepted": false,
+      "prediction": {
+        "predicted_answer": false,
+        "confidence": 0.9841269841269842
+      }
+    },
+    {
+      "turn": 4,
+      "question_id": 142457,
+      "question": "Is the object a pair of nail scissors?",
+      "answer": false,
+      "feasible_set_size_before": 125,
+      "feasible_set_size_after": 124,
+      "entropy_before": 6.965784284662087,
+      "entropy_after": 6.954196310386875,
+      "split_ratio": 0.008,
+      "branch_taken": "no",
+      "branch_probability": 0.992,
+      "model_action": "continue",
+      "guess": null,
+      "guess_correct": null,
+      "stop_reason": null,
+      "stop_accepted": null,
+      "prediction": {
+        "predicted_answer": false,
+        "confidence": 0.984
+      }
+    },
+    {
+      "turn": 5,
+      "question_id": 224465,
+      "question": "Is it a cactus-like plant?",
+      "answer": false,
+      "feasible_set_size_before": 124,
+      "feasible_set_size_after": 123,
+      "entropy_before": 6.954196310386875,
+      "entropy_after": 6.94251450533924,
+      "split_ratio": 0.008064516129032258,
+      "branch_taken": "no",
+      "branch_probability": 0.9919354838709677,
+      "model_action": "continue",
+      "guess": null,
+      "guess_correct": null,
+      "stop_reason": null,
+      "stop_accepted": null,
+      "prediction": {
+        "predicted_answer": false,
+        "confidence": 0.9838709677419355
+      }
+    },
+    {
+      "turn": 6,
+      "question_id": 272,
+      "question": "Is the object a fabric-covered upholstered bed with tapered legs?",
+      "answer": false,
+      "feasible_set_size_before": 123,
+      "feasible_set_size_after": 122,
+      "entropy_before": 6.94251450533924,
+      "entropy_after": 6.930737337562887,
+      "split_ratio": 0.008130081300813009,
+      "branch_taken": "no",
+      "branch_probability": 0.991869918699187,
+      "model_action": "continue",
+      "guess": null,
+      "guess_correct": null,
+      "stop_reason": null,
+      "stop_accepted": null,
+      "prediction": {
+        "predicted_answer": false,
+        "confidence": 0.983739837398374
+      }
+    },
+    {
+      "turn": 7,
+      "question_id": 491,
+      "question": "Is it a bracelet?",
+      "answer": false,
+      "feasible_set_size_before": 122,
+      "feasible_set_size_after": 121,
+      "entropy_before": 6.930737337562887,
+      "entropy_after": 6.918863237274595,
+      "split_ratio": 0.00819672131147541,
+      "branch_taken": "no",
+      "branch_probability": 0.9918032786885246,
+      "model_action": "continue",
+      "guess": null,
+      "guess_correct": null,
+      "stop_reason": null,
+      "stop_accepted": null,
+      "prediction": {
+        "predicted_answer": false,
+        "confidence": 0.9836065573770492
+      }
+    },
+    {
+      "turn": 8,
+      "question_id": 243197,
+      "question": "Is the object a board puzzle game?",
+      "answer": false,
+      "feasible_set_size_before": 121,
+      "feasible_set_size_after": 120,
+      "entropy_before": 6.918863237274595,
+      "entropy_after": 6.906890595608519,
+      "split_ratio": 0.008264462809917356,
+      "branch_taken": "no",
+      "branch_probability": 0.9917355371900827,
+      "model_action": "continue",
+      "guess": null,
+      "guess_correct": null,
+      "stop_reason": null,
+      "stop_accepted": null,
+      "prediction": {
+        "predicted_answer": false,
+        "confidence": 0.9834710743801653
+      }
+    },
+    {
+      "turn": 9,
+      "question_id": 168990,
+      "question": "Is the object a type of media player used to stream video?",
+      "answer": false,
+      "feasible_set_size_before": 120,
+      "feasible_set_size_after": 119,
+      "entropy_before": 6.906890595608519,
+      "entropy_after": 6.894817763307944,
+      "split_ratio": 0.008333333333333333,
+      "branch_taken": "no",
+      "branch_probability": 0.9916666666666667,
+      "model_action": "continue",
+      "guess": null,
+      "guess_correct": null,
+      "stop_reason": null,
+      "stop_accepted": null,
+      "prediction": {
+        "predicted_answer": false,
+        "confidence": 0.9833333333333333
+      }
+    },
+    {
+      "turn": 10,
+      "question_id": 7618,
+      "question": "Is it smaller than a tote bag?",
+      "answer": false,
+      "feasible_set_size_before": 119,
+      "feasible_set_size_after": 60,
+      "entropy_before": 6.894817763307944,
+      "entropy_after": 5.906890595608519,
+      "split_ratio": 0.4957983193277311,
+      "branch_taken": "no",
+      "branch_probability": 0.5042016806722689,
+      "model_action": "continue",
+      "guess": null,
+      "guess_correct": null,
+      "stop_reason": null,
+      "stop_accepted": null,
+      "prediction": {
+        "predicted_answer": false,
+        "confidence": 0.008403361344537785
+      }
+    },
+    {
+      "turn": 11,
+      "question_id": 17792,
+      "question": "Is it something you would use in the outdoors?",
+      "answer": true,
+      "feasible_set_size_before": 60,
+      "feasible_set_size_after": 30,
+      "entropy_before": 5.906890595608519,
+      "entropy_after": 4.906890595608519,
+      "split_ratio": 0.5,
+      "branch_taken": "yes",
+      "branch_probability": 0.5,
+      "model_action": "continue",
+      "guess": null,
+      "guess_correct": null,
+      "stop_reason": null,
+      "stop_accepted": null,
+      "prediction": {
+        "predicted_answer": true,
+        "confidence": 0.0
+      }
+    },
+    {
+      "turn": 12,
+      "question_id": 201978,
+      "question": "Is it something used in an everyday way?",
+      "answer": true,
+      "feasible_set_size_before": 30,
+      "feasible_set_size_after": 15,
+      "entropy_before": 4.906890595608519,
+      "entropy_after": 3.9068905956085187,
+      "split_ratio": 0.5,
+      "branch_taken": "yes",
+      "branch_probability": 0.5,
+      "model_action": "continue",
+      "guess": null,
+      "guess_correct": null,
+      "stop_reason": null,
+      "stop_accepted": null,
+      "prediction": {
+        "predicted_answer": true,
+        "confidence": 0.0
+      }
+    }
+  ],
+  "overlay_tags": [
+    "pred:calibrated_argmax",
+    "term:premature_stop",
+    "term:guess_at_end"
+  ],
+  "metadata": {
+    "seed": null,
+    "num_items": 128
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "total_trajectories": 100,
+  "by_type": {
+    "T8": 100
+  },
+  "by_mode": {
+    "path_first": 100
+  },
+  "avg_turns_by_type": {
+    "T8": 6.0
+  },
+  "generated_at": "2026-01-16T09:38:31.943149"
+}

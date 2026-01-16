@@ -1,0 +1,245 @@
+{
+  "trajectory_id": "b14c26aa",
+  "trajectory_type": "T5",
+  "target_mast_modes": [
+    "FM-2.2"
+  ],
+  "generation_mode": "path_first",
+  "secret": "Ship",
+  "secret_index": 100,
+  "turns": [
+    {
+      "turn": 1,
+      "question_id": 140873,
+      "question": "Is it larger than a beach ball?",
+      "answer": true,
+      "feasible_set_size_before": 128,
+      "feasible_set_size_after": 64,
+      "entropy_before": 7.0,
+      "entropy_after": 6.0,
+      "split_ratio": 0.5,
+      "branch_taken": "yes",
+      "branch_probability": 0.5,
+      "model_action": "continue",
+      "guess": null,
+      "guess_correct": null,
+      "stop_reason": null,
+      "stop_accepted": null,
+      "prediction": {
+        "predicted_answer": true,
+        "confidence": 0.0
+      }
+    },
+    {
+      "turn": 2,
+      "question_id": 87743,
+      "question": "Is it an object of recreational interest?",
+      "answer": true,
+      "feasible_set_size_before": 64,
+      "feasible_set_size_after": 32,
+      "entropy_before": 6.0,
+      "entropy_after": 5.0,
+      "split_ratio": 0.5,
+      "branch_taken": "yes",
+      "branch_probability": 0.5,
+      "model_action": "continue",
+      "guess": null,
+      "guess_correct": null,
+      "stop_reason": null,
+      "stop_accepted": null,
+      "prediction": {
+        "predicted_answer": true,
+        "confidence": 0.0
+      }
+    },
+    {
+      "turn": 3,
+      "question_id": 146694,
+      "question": "Is it something that can be used to create an artwork?",
+      "answer": true,
+      "feasible_set_size_before": 32,
+      "feasible_set_size_after": 16,
+      "entropy_before": 5.0,
+      "entropy_after": 4.0,
+      "split_ratio": 0.5,
+      "branch_taken": "yes",
+      "branch_probability": 0.5,
+      "model_action": "continue",
+      "guess": null,
+      "guess_correct": null,
+      "stop_reason": null,
+      "stop_accepted": null,
+      "prediction": {
+        "predicted_answer": false,
+        "confidence": 0.0
+      }
+    },
+    {
+      "turn": 4,
+      "question_id": 247335,
+      "question": "Is it a item of artwork?",
+      "answer": false,
+      "feasible_set_size_before": 16,
+      "feasible_set_size_after": 14,
+      "entropy_before": 4.0,
+      "entropy_after": 3.807354922057604,
+      "split_ratio": 0.125,
+      "branch_taken": "no",
+      "branch_probability": 0.875,
+      "model_action": "continue",
+      "guess": null,
+      "guess_correct": null,
+      "stop_reason": null,
+      "stop_accepted": null,
+      "prediction": {
+        "predicted_answer": false,
+        "confidence": 0.75
+      }
+    },
+    {
+      "turn": 5,
+      "question_id": 15489,
+      "question": "Is it an object typically found in a living room?",
+      "answer": false,
+      "feasible_set_size_before": 14,
+      "feasible_set_size_after": 12,
+      "entropy_before": 3.807354922057604,
+      "entropy_after": 3.584962500721156,
+      "split_ratio": 0.14285714285714285,
+      "branch_taken": "no",
+      "branch_probability": 0.8571428571428572,
+      "model_action": "continue",
+      "guess": null,
+      "guess_correct": null,
+      "stop_reason": null,
+      "stop_accepted": null,
+      "prediction": {
+        "predicted_answer": false,
+        "confidence": 0.7142857142857143
+      }
+    },
+    {
+      "turn": 6,
+      "question_id": 73139,
+      "question": "Is the object larger than a airplane?",
+      "answer": true,
+      "feasible_set_size_before": 12,
+      "feasible_set_size_after": 10,
+      "entropy_before": 3.584962500721156,
+      "entropy_after": 3.321928094887362,
+      "split_ratio": 0.8333333333333334,
+      "branch_taken": "yes",
+      "branch_probability": 0.8333333333333334,
+      "model_action": "continue",
+      "guess": null,
+      "guess_correct": null,
+      "stop_reason": null,
+      "stop_accepted": null,
+      "prediction": {
+        "predicted_answer": true,
+        "confidence": 0.6666666666666667
+      }
+    },
+    {
+      "turn": 7,
+      "question_id": 971,
+      "question": "Is it a type of food or beverage?",
+      "answer": false,
+      "feasible_set_size_before": 10,
+      "feasible_set_size_after": 9,
+      "entropy_before": 3.321928094887362,
+      "entropy_after": 3.169925001442312,
+      "split_ratio": 0.1,
+      "branch_taken": "no",
+      "branch_probability": 0.9,
+      "model_action": "continue",
+      "guess": null,
+      "guess_correct": null,
+      "stop_reason": null,
+      "stop_accepted": null,
+      "prediction": {
+        "predicted_answer": false,
+        "confidence": 0.8
+      }
+    },
+    {
+      "turn": 8,
+      "question_id": 31477,
+      "question": "Is it used for water-based sports?",
+      "answer": false,
+      "feasible_set_size_before": 9,
+      "feasible_set_size_after": 5,
+      "entropy_before": 3.169925001442312,
+      "entropy_after": 2.321928094887362,
+      "split_ratio": 0.4444444444444444,
+      "branch_taken": "no",
+      "branch_probability": 0.5555555555555556,
+      "model_action": "continue",
+      "guess": null,
+      "guess_correct": null,
+      "stop_reason": null,
+      "stop_accepted": null,
+      "prediction": {
+        "predicted_answer": false,
+        "confidence": 0.11111111111111116
+      }
+    },
+    {
+      "turn": 9,
+      "question_id": 0,
+      "question": "Is the object alive?",
+      "answer": false,
+      "feasible_set_size_before": 5,
+      "feasible_set_size_after": 3,
+      "entropy_before": 2.321928094887362,
+      "entropy_after": 1.584962500721156,
+      "split_ratio": 0.4,
+      "branch_taken": "no",
+      "branch_probability": 0.6,
+      "model_action": "continue",
+      "guess": null,
+      "guess_correct": null,
+      "stop_reason": null,
+      "stop_accepted": null,
+      "prediction": {
+        "predicted_answer": false,
+        "confidence": 0.19999999999999996
+      }
+    },
+    {
+      "turn": 10,
+      "question_id": 80680,
+      "question": "Is the object an machine?",
+      "answer": true,
+      "feasible_set_size_before": 3,
+      "feasible_set_size_after": 2,
+      "entropy_before": 1.584962500721156,
+      "entropy_after": 1.0,
+      "split_ratio": 0.6666666666666666,
+      "branch_taken": "yes",
+      "branch_probability": 0.6666666666666666,
+      "model_action": "guess",
+      "guess": {
+        "secret_index": 100,
+        "secret": "Ship",
+        "confidence": 0.5
+      },
+      "guess_correct": true,
+      "stop_reason": null,
+      "stop_accepted": true,
+      "prediction": {
+        "predicted_answer": true,
+        "confidence": 0.33333333333333326
+      }
+    }
+  ],
+  "overlay_tags": [
+    "pred:calibrated_argmax",
+    "term:rational",
+    "term:guess_at_end"
+  ],
+  "metadata": {
+    "seed": null,
+    "num_items": 128
+  }
+}

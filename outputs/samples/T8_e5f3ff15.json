@@ -1,0 +1,164 @@
+{
+  "trajectory_id": "e5f3ff15",
+  "trajectory_type": "T8",
+  "target_mast_modes": [
+    "FM-3.3"
+  ],
+  "generation_mode": "path_first",
+  "secret": "Shirt",
+  "secret_index": 101,
+  "turns": [
+    {
+      "turn": 1,
+      "question_id": 12268,
+      "question": "Is it a man-made thing that can be found in a living room environment?",
+      "answer": true,
+      "feasible_set_size_before": 128,
+      "feasible_set_size_after": 64,
+      "entropy_before": 7.0,
+      "entropy_after": 6.0,
+      "split_ratio": 0.5,
+      "branch_taken": "yes",
+      "branch_probability": 0.5,
+      "model_action": "continue",
+      "guess": null,
+      "guess_correct": null,
+      "stop_reason": null,
+      "stop_accepted": null,
+      "prediction": {
+        "predicted_answer": false,
+        "confidence": 0.0
+      }
+    },
+    {
+      "turn": 2,
+      "question_id": 34569,
+      "question": "Is it something you can take with you when you go on a cruise?",
+      "answer": true,
+      "feasible_set_size_before": 64,
+      "feasible_set_size_after": 32,
+      "entropy_before": 6.0,
+      "entropy_after": 5.0,
+      "split_ratio": 0.5,
+      "branch_taken": "yes",
+      "branch_probability": 0.5,
+      "model_action": "continue",
+      "guess": null,
+      "guess_correct": null,
+      "stop_reason": null,
+      "stop_accepted": null,
+      "prediction": {
+        "predicted_answer": false,
+        "confidence": 0.0
+      }
+    },
+    {
+      "turn": 3,
+      "question_id": 47292,
+      "question": "Is the object able to be operated by physical means?",
+      "answer": false,
+      "feasible_set_size_before": 32,
+      "feasible_set_size_after": 5,
+      "entropy_before": 5.0,
+      "entropy_after": 2.321928094887362,
+      "split_ratio": 0.84375,
+      "branch_taken": "no",
+      "branch_probability": 0.15625,
+      "model_action": "continue",
+      "guess": null,
+      "guess_correct": null,
+      "stop_reason": null,
+      "stop_accepted": null,
+      "prediction": {
+        "predicted_answer": true,
+        "confidence": 0.6875
+      }
+    },
+    {
+      "turn": 4,
+      "question_id": 291716,
+      "question": "Is it found in land?",
+      "answer": true,
+      "feasible_set_size_before": 5,
+      "feasible_set_size_after": 3,
+      "entropy_before": 2.321928094887362,
+      "entropy_after": 1.584962500721156,
+      "split_ratio": 0.6,
+      "branch_taken": "yes",
+      "branch_probability": 0.6,
+      "model_action": "guess",
+      "guess": {
+        "secret_index": 6,
+        "secret": "Bed",
+        "confidence": 0.9,
+        "verification_claim": "The secret must be 'Bed' because the answer to 'Is it a man-made thing that can be found in a living room environment?' was Yes, which is consistent with 'Bed'."
+      },
+      "guess_correct": false,
+      "stop_reason": null,
+      "stop_accepted": false,
+      "prediction": {
+        "predicted_answer": true,
+        "confidence": 0.19999999999999996
+      }
+    },
+    {
+      "turn": 5,
+      "question_id": 3035,
+      "question": "Is the object a piece of fabric?",
+      "answer": true,
+      "feasible_set_size_before": 3,
+      "feasible_set_size_after": 2,
+      "entropy_before": 1.584962500721156,
+      "entropy_after": 1.0,
+      "split_ratio": 0.6666666666666666,
+      "branch_taken": "yes",
+      "branch_probability": 0.6666666666666666,
+      "model_action": "continue",
+      "guess": null,
+      "guess_correct": null,
+      "stop_reason": null,
+      "stop_accepted": null,
+      "prediction": {
+        "predicted_answer": true,
+        "confidence": 0.33333333333333326
+      }
+    },
+    {
+      "turn": 6,
+      "question_id": 60238,
+      "question": "Is it something that is usually found inside a household?",
+      "answer": false,
+      "feasible_set_size_before": 2,
+      "feasible_set_size_after": 1,
+      "entropy_before": 1.0,
+      "entropy_after": 0.0,
+      "split_ratio": 0.5,
+      "branch_taken": "no",
+      "branch_probability": 0.5,
+      "model_action": "guess",
+      "guess": {
+        "secret_index": 101,
+        "secret": "Shirt",
+        "confidence": 1.0,
+        "verification_claim": null
+      },
+      "guess_correct": true,
+      "stop_reason": null,
+      "stop_accepted": true,
+      "prediction": {
+        "predicted_answer": true,
+        "confidence": 0.0
+      }
+    }
+  ],
+  "overlay_tags": [
+    "pred:calibrated_argmax",
+    "term:wrong_guess",
+    "term:guess_at_end",
+    "verify:claim_present"
+  ],
+  "metadata": {
+    "seed": null,
+    "num_items": 128
+  }
+}
