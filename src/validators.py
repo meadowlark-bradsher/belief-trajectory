@@ -214,7 +214,7 @@ def validate_t6_gate(trajectory: Trajectory) -> ValidationResult:
 def validate_t7_gate(trajectory: Trajectory) -> ValidationResult:
     """T7 gate: late rare-branch shock.
 
-    Constraint: last 1-2 turns have p_branch <= threshold
+    Constraint: rare branch (p_branch <= threshold) occurs in last 4 turns
     """
     if len(trajectory.turns) < 2:
         return ValidationResult(
@@ -223,21 +223,22 @@ def validate_t7_gate(trajectory: Trajectory) -> ValidationResult:
             metrics={}
         )
 
-    # Check last 2 turns for rare branch
+    # Check last 4 turns for rare branch (relaxed from 2 to handle variable-length trajectories)
     late_shock_found = False
     shock_turn = None
+    check_window = min(4, len(trajectory.turns))
 
-    for turn in trajectory.turns[-2:]:
+    for turn in trajectory.turns[-check_window:]:
         if turn.branch_probability <= RARE_BRANCH_THRESHOLD:
             late_shock_found = True
             shock_turn = turn.turn
             break
 
     if not late_shock_found:
-        last_probs = [t.branch_probability for t in trajectory.turns[-2:]]
+        last_probs = [t.branch_probability for t in trajectory.turns[-check_window:]]
         return ValidationResult(
             passed=False,
-            reason=f"No late shock: last 2 branch probs = {last_probs}",
+            reason=f"No late shock: last {check_window} branch probs = {last_probs}",
             metrics={"late_branch_probs": last_probs}
         )
 

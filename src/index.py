@@ -6,6 +6,7 @@ split characteristics on a given feasible set state.
 
 import random
 from dataclasses import dataclass
+from functools import lru_cache
 from typing import Optional
 
 from .bitmask import (
@@ -29,11 +30,27 @@ class QuestionCandidate:
     no_count: int
 
 
+# Popcount bucket boundaries for fast lookup
+POPCOUNT_BUCKETS = {
+    'plateau_low': (0, 6),      # 0-5% YES → almost always low-IG
+    'near_plateau_low': (7, 16),  # 5-12% YES → usually low-IG
+    'low': (17, 32),            # 13-25% YES
+    'balanced': (33, 95),       # 26-74% YES → good for balanced splits
+    'high': (96, 111),          # 75-87% YES
+    'near_plateau_high': (112, 121),  # 88-95% YES → usually low-IG
+    'plateau_high': (122, 128), # 95-100% YES → almost always low-IG
+}
+
+
 class QuestionIndex:
     """Index for efficient question lookup by split characteristics.
 
     This class provides methods to find questions matching various
     split criteria on a given feasible set state.
+
+    Optimizations:
+    - Precomputed popcount buckets for O(bucket_size) instead of O(n) searches
+    - LRU cache for compute_candidates to avoid redundant work on similar states
     """
 
     def __init__(
@@ -51,25 +68,143 @@ class QuestionIndex:
         self.questions = dataset.questions
         self.rng = random.Random(seed)
 
-    def compute_candidates(
+        # Build popcount buckets for fast lookup (Fix B)
+        self._build_popcount_buckets()
+
+        # Cache for compute_candidates (Fix C)
+        self._candidate_cache: dict[int, list[QuestionCandidate]] = {}
+        self._cache_max_size = 10
+
+    def _build_popcount_buckets(self):
+        """Precompute global popcount for each question and bucket them."""
+        self.question_popcount: dict[int, int] = {}
+        self.popcount_buckets: dict[str, list[Question]] = {
+            name: [] for name in POPCOUNT_BUCKETS
+        }
+
+        for q in self.questions:
+            pc = popcount(q.bitmask)
+            self.question_popcount[q.question_id] = pc
+
+            # Add to appropriate bucket(s)
+            for bucket_name, (lo, hi) in POPCOUNT_BUCKETS.items():
+                if lo <= pc <= hi:
+                    self.popcount_buckets[bucket_name].append(q)
+
+        # Also create combined buckets for common use cases
+        self.low_popcount_questions = (
+            self.popcount_buckets['plateau_low'] +
+            self.popcount_buckets['near_plateau_low']
+        )
+        self.high_popcount_questions = (
+            self.popcount_buckets['plateau_high'] +
+            self.popcount_buckets['near_plateau_high']
+        )
+        self.balanced_questions = self.popcount_buckets['balanced']
+
+    def _get_cached_candidates(
         self,
         state: int,
         exclude_ids: Optional[set[int]] = None
+    ) -> Optional[list[QuestionCandidate]]:
+        """Check cache for precomputed candidates."""
+        if state in self._candidate_cache:
+            cached = self._candidate_cache[state]
+            if exclude_ids:
+                return [c for c in cached if c.question.question_id not in exclude_ids]
+            return cached
+        return None
+
+    def _cache_candidates(self, state: int, candidates: list[QuestionCandidate]):
+        """Store candidates in cache with LRU eviction."""
+        if len(self._candidate_cache) >= self._cache_max_size:
+            # Remove oldest entry
+            oldest_key = next(iter(self._candidate_cache))
+            del self._candidate_cache[oldest_key]
+        self._candidate_cache[state] = candidates
+
+    def clear_cache(self):
+        """Clear the candidate cache (call between trajectories)."""
+        self._candidate_cache.clear()
+
+    def compute_candidates(
+        self,
+        state: int,
+        exclude_ids: Optional[set[int]] = None,
+        use_cache: bool = True
     ) -> list[QuestionCandidate]:
         """Compute characteristics for all questions on a state.
 
         Args:
             state: Current feasible set
             exclude_ids: Question IDs to exclude (already asked)
+            use_cache: Whether to use/update the cache (Fix C)
 
         Returns:
             List of QuestionCandidate objects
         """
+        # Check cache first (Fix C)
+        if use_cache:
+            cached = self._get_cached_candidates(state, exclude_ids)
+            if cached is not None:
+                return cached
+
         exclude_ids = exclude_ids or set()
         total = popcount(state)
         candidates = []
 
         for q in self.questions:
+            if q.question_id in exclude_ids:
+                continue
+
+            yes_count = popcount(get_yes_set(state, q.bitmask))
+            no_count = total - yes_count
+
+            # Skip questions that don't split the state
+            if yes_count == 0 or no_count == 0:
+                continue
+
+            ratio = yes_count / total
+            ig = information_gain(state, q.bitmask)
+
+            candidates.append(QuestionCandidate(
+                question=q,
+                split_ratio=ratio,
+                information_gain=ig,
+                yes_count=yes_count,
+                no_count=no_count,
+            ))
+
+        # Cache the results (Fix C)
+        if use_cache:
+            self._cache_candidates(state, candidates)
+
+        return candidates
+
+    def _compute_candidates_from_bucket(
+        self,
+        state: int,
+        bucket: list,
+        exclude_ids: Optional[set[int]] = None
+    ) -> list[QuestionCandidate]:
+        """Compute candidates from a specific bucket only (Fix B).
+
+        This is much faster than compute_candidates when you only need
+        questions from a specific popcount range.
+
+        Args:
+            state: Current feasible set
+            bucket: List of questions to consider (from popcount buckets)
+            exclude_ids: Question IDs to exclude
+
+        Returns:
+            List of QuestionCandidate objects from the bucket
+        """
+        exclude_ids = exclude_ids or set()
+        total = popcount(state)
+        candidates = []
+
+        for q in bucket:
             if q.question_id in exclude_ids:
                 continue
 
@@ -201,7 +336,8 @@ class QuestionIndex:
         state: int,
         exclude_ids: Optional[set[int]] = None,
         ig_threshold: float = 0.1,
-        max_results: int = 100
+        max_results: int = 100,
+        use_bucket: bool = True
     ) -> list[QuestionCandidate]:
         """Find questions that provide minimal information gain.
 
@@ -210,10 +346,36 @@ class QuestionIndex:
             exclude_ids: Question IDs to exclude
             ig_threshold: Maximum IG to consider "no-op"
             max_results: Maximum number of results
+            use_bucket: If True, search low_popcount bucket first (Fix B)
 
         Returns:
             Questions that barely reduce entropy
         """
+        # Fix B: Search low_popcount bucket first (plateau_low + near_plateau_low)
+        # These questions are most likely to have low IG on any state
+        if use_bucket:
+            candidates = self._compute_candidates_from_bucket(
+                state, self.low_popcount_questions, exclude_ids
+            )
+            matches = [c for c in candidates if c.information_gain <= ig_threshold]
+
+            # If we found enough, return them
+            if len(matches) >= max_results:
+                matches.sort(key=lambda c: c.information_gain)
+                return matches[:max_results]
+
+            # Also try high_popcount bucket (plateau_high + near_plateau_high)
+            candidates_high = self._compute_candidates_from_bucket(
+                state, self.high_popcount_questions, exclude_ids
+            )
+            matches_high = [c for c in candidates_high if c.information_gain <= ig_threshold]
+            matches.extend(matches_high)
+
+            if matches:
+                matches.sort(key=lambda c: c.information_gain)
+                return matches[:max_results]
+
+        # Fallback: full scan if buckets didn't yield results
         candidates = self.compute_candidates(state, exclude_ids)
         matches = [c for c in candidates if c.information_gain <= ig_threshold]
 

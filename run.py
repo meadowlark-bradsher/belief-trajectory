@@ -49,6 +49,12 @@ DEFAULT_DISTRIBUTION = {
     "T8": 10,
 }
 
+# Default termination overlays required for certain types to pass their gates
+# T8 requires wrong_guess overlay to generate the verification_claim
+DEFAULT_TERMINATION_OVERLAYS = {
+    "T8": ["wrong_guess"],
+}
+
 
 PREDICTION_OVERLAYS = {
     "calibrated": CalibratedOverlay,
@@ -131,6 +137,12 @@ def cmd_single(args):
     pred_overlays = args.overlay or []
     term_overlays = args.termination or []
     skip_prediction = getattr(args, 'no_prediction', False)
+
+    # Apply default termination overlays for types that require them (e.g., T8 needs wrong_guess)
+    for overlay in DEFAULT_TERMINATION_OVERLAYS.get(args.type, []):
+        if overlay not in term_overlays:
+            term_overlays = term_overlays + [overlay]
+
     if pred_overlays or term_overlays or skip_prediction:
         chain = create_overlay_chain(
             prediction_names=pred_overlays,
@@ -212,11 +224,10 @@ def cmd_batch(args):
     secret_first = SecretFirstGenerator(dataset, config, seed=args.seed)
     path_first = PathFirstGenerator(dataset, config, seed=args.seed)
 
-    # Overlay options
+    # Overlay options (defaults for specific types are applied per-trajectory)
     pred_overlays = args.overlay or []
     term_overlays = args.termination or []
     skip_prediction = getattr(args, 'no_prediction', False)
-    use_overlays = bool(pred_overlays or term_overlays or skip_prediction)
 
     # Stats tracking
     stats = {ttype: {
@@ -249,10 +260,16 @@ def cmd_batch(args):
                     max_turns=args.max_turns,
                 )
 
-                if use_overlays:
+                # Apply default termination overlays for types that require them
+                ttype_term_overlays = list(term_overlays)
+                for overlay in DEFAULT_TERMINATION_OVERLAYS.get(ttype, []):
+                    if overlay not in ttype_term_overlays:
+                        ttype_term_overlays.append(overlay)
+
+                if pred_overlays or ttype_term_overlays or skip_prediction:
                     chain = create_overlay_chain(
                         prediction_names=pred_overlays,
-                        termination_names=term_overlays,
+                        termination_names=ttype_term_overlays,
                         items=dataset.items,
                         secret_index=trajectory.secret_index,
                         skip_prediction=skip_prediction

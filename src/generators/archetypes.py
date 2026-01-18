@@ -223,10 +223,11 @@ def _t7_constraint(turn: int, total: int) -> SplitConstraint:
     """T7: Late shock after confidence.
 
     Phase 1 (turns 1 to total-3): Build confidence with moderate splits
-        - Floor at 8 items to ensure shock happens before |S|=1
+        - Floor at 8 items to ensure shock has room for extreme splits
         - Taking likely branches builds "everything is fine" belief
-    Phase 2 (shock turn = total-2): Extreme split, UNLIKELY branch
+    Phase 2 (shock turn = total-2): Skewed split, UNLIKELY branch
         - The "shock" that should trigger verification/revision
+        - Relaxed to 0.70-0.95 to be achievable with small |S|
     Phase 3 (final turn): Resolution after shock
     """
     shock_turn = total - 2
@@ -238,14 +239,14 @@ def _t7_constraint(turn: int, total: int) -> SplitConstraint:
             ratio_min=0.55,
             ratio_max=0.75,
             branch_policy=BranchPolicy.LIKELY,
-            min_feasible_after=4  # Don't collapse below 4 before shock
+            min_feasible_after=8  # Keep |S| >= 8 to allow extreme splits at shock
         )
     elif turn == shock_turn:
-        # SHOCK: extreme split, take the unlikely branch
-        # This contradicts the "everything is fine" belief
+        # SHOCK: skewed split, take the unlikely branch
+        # Relaxed from 0.85-0.98 to 0.70-0.95 (achievable with |S| >= 4)
         return SplitConstraint(
-            ratio_min=0.85,
-            ratio_max=0.98,
+            ratio_min=0.70,
+            ratio_max=0.95,
             branch_policy=BranchPolicy.UNLIKELY,
             is_reversal_turn=True  # Mark as the shock point
         )
