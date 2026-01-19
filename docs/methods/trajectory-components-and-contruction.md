@@ -17,11 +17,11 @@ We use a fixed universe of **N = 128** secrets.
 
 This is a reduction from an earlier 158-secret setting, originally derived from LMRL_Gym, to simplify downstream math and indexing:
 
-* Entropy bounds become (\log_2 128 = 7) bits.
+* Entropy bounds become \(\log_2 128 = 7\) bits.
 * Masks fit cleanly in power-of-two representations.
 * Coverage binning and gating logic is simpler.
 
-Secrets are assigned stable integer IDs ({1,\dots,128}).
+Secrets are assigned stable integer IDs \(\{1,\dots,128\}\).
 
 ---
 
@@ -43,17 +43,17 @@ Operationally:
 
 ## Oracle-derived bitmasks
 
-For each canonical question (q) and each secret (s_i \in \Omega) ((|\Omega|=128)), we query an oracle for a binary answer:
+For each canonical question \(q\) and each secret \(s_i \in \Omega\) (\(|\Omega|=128\)), we query an oracle for a binary answer:
 
-[
-a(q,s_i) \in {0,1},\quad 1=\text{YES},;0=\text{NO}.
-]
+\[
+a(q,s_i) \in \{0,1\},\quad 1=\text{YES},\;0=\text{NO}.
+\]
 
 We stack these answers into a per-question bitmask:
 
-[
-m_q = [a(q,s_1), a(q,s_2), \dots, a(q,s_{128})]^\top \in {0,1}^{128}.
-]
+\[
+m_q = [a(q,s_1), a(q,s_2), \dots, a(q,s_{128})]^\top \in \{0,1\}^{128}.
+\]
 
 Masks are stored as bitsets for fast intersection and popcount.
 
@@ -61,48 +61,48 @@ Masks are stored as bitsets for fast intersection and popcount.
 
 ## Posterior update via bitmask algebra
 
-We represent the environment’s belief state as a **feasible set** over secrets rather than a free-form probability distribution.
+We represent the environment's belief state as a **feasible set** over secrets rather than a free-form probability distribution.
 
 ### Feasible-set (posterior) state
 
-Let (S_t \in {0,1}^{128}) be the feasible-set mask after turn (t), with (S_0=\mathbf{1}) (all secrets initially feasible).
+Let \(S_t \in \{0,1\}^{128}\) be the feasible-set mask after turn \(t\), with \(S_0=\mathbf{1}\) (all secrets initially feasible).
 
-When we ask question (q_t) and observe oracle answer (y_t \in {\text{YES},\text{NO}}), we update deterministically:
+When we ask question \(q_t\) and observe oracle answer \(y_t \in \{\text{YES},\text{NO}\}\), we update deterministically:
 
-* If (y_t=\text{YES}):
-  [
+* If \(y_t=\text{YES}\):
+  \[
   S_{t+1} = S_t \wedge m_{q_t}
-  ]
+  \]
 
-* If (y_t=\text{NO}):
-  [
+* If \(y_t=\text{NO}\):
+  \[
   S_{t+1} = S_t \wedge \neg m_{q_t}
-  ]
+  \]
 
-This update is equivalent to Bayesian filtering under a uniform prior over (S_t) and a deterministic observation model: secrets inconsistent with the observation are eliminated.
+This update is equivalent to Bayesian filtering under a uniform prior over \(S_t\) and a deterministic observation model: secrets inconsistent with the observation are eliminated.
 
 ---
 
 ## Derived quantities for calibration
 
-From (S_t) we compute:
+From \(S_t\) we compute:
 
-* **Feasible set size:** (|S_t| = |S_t|_1)
+* **Feasible set size:** \(|S_t| = \|S_t\|_1\)
 
 * **Environment epistemic entropy proxy:**
-  [
-  H^{env}_t = \log_2 |S_t|
-  ]
+  \[
+  H^{\text{env}}_t = \log_2 |S_t|
+  \]
 
-* **Environment probability of YES for a candidate question (q):**
-  [
-  p^{env}_t(\text{YES}\mid q) = \frac{|S_t \wedge m_q|_1}{|S_t|_1}
-  ]
+* **Environment probability of YES for a candidate question \(q\):**
+  \[
+  p^{\text{env}}_t(\text{YES}\mid q) = \frac{\|S_t \wedge m_q\|_1}{\|S_t\|_1}
+  \]
 
 These quantities provide ground truth targets for:
 
-* next-answer probability calibration (match (\hat p) to (p^{env}))
-* state uncertainty calibration (match (\hat H) to (H^{env}))
+* next-answer probability calibration (match \(\hat p\) to \(p^{\text{env}}\))
+* state uncertainty calibration (match \(\hat H\) to \(H^{\text{env}}\))
 
 ---
 
@@ -116,8 +116,8 @@ The world layer consists of:
 
 * question IDs (and text)
 * oracle answers
-* feasible-set updates (S_t)
-* derived metrics ((|S_t|), (H_t), split ratios)
+* feasible-set updates \(S_t\)
+* derived metrics (\(|S_t|\), \(H_t\), split ratios)
 
 World generation is validated by per-type gates (e.g., plateau→resolution, late shock).
 
