@@ -15,6 +15,11 @@ theme:
 
 nav:
   - Home: index.md
+  - MAST Failure Modes:
+    - Overview: mast/index.md
+    - FM-1.x Specification: mast/fm1.md
+    - FM-2.x Belief: mast/fm2.md
+    - FM-3.x Verification: mast/fm3.md
   - Trajectory Archetypes:
     - Overview: archetypes/index.md
     - T1 - Smooth Halving: archetypes/t1.md
@@ -25,18 +30,13 @@ nav:
     - T6 - Prediction Mismatch: archetypes/t6.md
     - T7 - Late Shock: archetypes/t7.md
     - T8 - Wrong Verification: archetypes/t8.md
-  - MAST Failure Modes:
-    - Overview: mast/index.md
-    - FM-1.x Specification: mast/fm1.md
-    - FM-2.x Belief: mast/fm2.md
-    - FM-3.x Verification: mast/fm3.md
   - Overlays:
     - Prediction Overlays: overlays/prediction.md
     - Termination Overlays: overlays/termination.md
-  - Methods:
-    - Trajectory Construction: methods/trajectory-components-and-contruction.md
   - Schemas:
     - Turn Schema: schemas/turn_schema.md
+  - Methods:
+    - Trajectory Construction: methods/trajectory-components-and-contruction.md
 
 markdown_extensions:
   - tables
