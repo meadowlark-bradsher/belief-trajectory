@@ -4,12 +4,13 @@ Synthetic trajectory generator for 20 Questions (20Q) games that stress-test spe
 
 ## What is this?
 
-This toolkit generates trajectories for a 20Q game where:
+This toolkit generates synthetic trajectories for a 20Q game where:
 
 - An **oracle** knows a secret item (one of 128 possibilities).
 - A **guesser** asks yes/no questions to identify the secret.
 - Each question partitions the feasible set based on the oracle’s answer (implemented via bitmask updates).
-- The system is designed as a diagnostic tool for 20Q-style (iteratively probing) agentic tasks.
+- The trajectory is synthetic but is presented to a LLM as it's authentic history.
+- The rules are modified to resemble an agentic task (agents can declare they are finished)
 
 We use **MAST (Multi-Agent System Failure Taxonomy)** terminology for failure-mode naming and attribution (Cemri et al., 2025, arXiv:2503.13657). See [docs/mast/index.md](mast/index.md).
 
