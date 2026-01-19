@@ -25,6 +25,10 @@ data/
 # Outputs (regeneratable)
 outputs/
 
+# Development tooling (not part of core project)
+new_oracle_project/
+design/
+
 # Large generated data files
 *.jsonl
 new_oracle_project/compare/batch_questions.json
