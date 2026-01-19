@@ -33,9 +33,6 @@ nav:
   - Overlays:
     - Prediction Overlays: overlays/prediction.md
     - Termination Overlays: overlays/termination.md
-  - RL Integration:
-    - Canonical Example: rl/canonical-example.md
-    - Reward Shaping: rl/reward-shaping.md
   - Methods:
     - Trajectory Construction: methods/trajectory-components-and-contruction.md
   - Schemas:
