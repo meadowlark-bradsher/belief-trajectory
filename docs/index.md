@@ -9,6 +9,7 @@ This toolkit generates trajectories for a 20 Questions game where:
 - An **oracle** knows a secret item (one of 128 possibilities)
 - A **guesser** asks yes/no questions to identify the secret
 - Each question partitions the feasible set based on the oracle's answer
+- Is designed as a diagnostic tool for 20Q posed as an agentic task
 
 The trajectories are designed to exhibit specific **failure patterns** that can be used to:
 
