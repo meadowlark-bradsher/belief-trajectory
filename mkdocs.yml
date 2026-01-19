@@ -36,6 +36,10 @@ nav:
   - RL Integration:
     - Canonical Example: rl/canonical-example.md
     - Reward Shaping: rl/reward-shaping.md
+  - Methods:
+    - Trajectory Construction: methods/trajectory-components-and-contruction.md
+  - Schemas:
+    - Turn Schema: schemas/turn_schema.md
 
 markdown_extensions:
   - tables
