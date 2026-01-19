@@ -28,6 +28,7 @@ outputs/
 # Development tooling (not part of core project)
 new_oracle_project/
 design/
+experiments/
 
 # Large generated data files
 *.jsonl
@@ -39,3 +40,4 @@ Thumbs.db
 
 # Environment
 .env
+CLAUDE.md
