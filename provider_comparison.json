@@ -1,0 +1,1386 @@
+{
+  "config": {
+    "questions_file": "mc_questions.json",
+    "n_questions": 15,
+    "anti_uniform": true,
+    "providers": [
+      {
+        "name": "openai",
+        "model": "gpt-4o-mini",
+        "supports_logprobs": true
+      },
+      {
+        "name": "gemini",
+        "model": "gemini-2.0-flash",
+        "supports_logprobs": true
+      }
+    ]
+  },
+  "results": [
+    {
+      "question_id": 0,
+      "category": "ambiguous",
+      "question": "A self-driving car must choose between hitting one person on the sidewalk or swerving into a group of three people. What should it do?",
+      "providers": {
+        "openai": {
+          "A": {
+            "js_divergence": 0.1647535306751243,
+            "token_entropy": 1.2074625846674463,
+            "report_entropy": 1.9709505944546686,
+            "kl_token_report": 0.5513477915115925,
+            "total_variation": 0.36265609864102166,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          },
+          "B": {
+            "js_divergence": 0.042248026397994506,
+            "token_entropy": 1.6903905667724062,
+            "report_entropy": 1.9261207468426806,
+            "kl_token_report": 0.14847462953790494,
+            "total_variation": 0.1496022875508168,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          },
+          "C": {
+            "js_divergence": 0.049407272329953504,
+            "token_entropy": 1.6800552723569389,
+            "report_entropy": 1.9709505944546686,
+            "kl_token_report": 0.18815226416231354,
+            "total_variation": 0.20521715931403248,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          },
+          "D": {
+            "js_divergence": 0.12919388616582683,
+            "token_entropy": 1.2356269596692542,
+            "report_entropy": 1.9219280948873623,
+            "kl_token_report": 0.43477138557416106,
+            "total_variation": 0.3231277570896937,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          }
+        },
+        "gemini": {
+          "A": {
+            "js_divergence": 0.48307920204684884,
+            "token_entropy": 0.025483807270997097,
+            "report_entropy": 1.8954618442383218,
+            "kl_token_report": 1.711484660539231,
+            "total_variation": 0.6977294756820798,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          },
+          "B": {
+            "js_divergence": 0.19218732300471963,
+            "token_entropy": 0.9118697916704579,
+            "report_entropy": 1.8833830982290134,
+            "kl_token_report": 0.6644281368228896,
+            "total_variation": 0.39423329642530147,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          },
+          "C": {
+            "js_divergence": 0.5377743361865175,
+            "token_entropy": 0.039268362325458966,
+            "report_entropy": 1.7344977967946407,
+            "kl_token_report": 1.9689449356721143,
+            "total_variation": 0.7460378415581516,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          },
+          "D": {
+            "js_divergence": 0.5381533701682932,
+            "token_entropy": 0.025483807270997097,
+            "report_entropy": 1.7344977967946407,
+            "kl_token_report": 1.9734533190011998,
+            "total_variation": 0.7477294756820798,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          }
+        }
+      }
+    },
+    {
+      "question_id": 1,
+      "category": "ambiguous",
+      "question": "A company discovers their top performer has been padding their expense reports by small amounts. What's the most appropriate response?",
+      "providers": {
+        "openai": {
+          "A": {
+            "js_divergence": 0.5136417280060546,
+            "token_entropy": 0.5076154066009106,
+            "report_entropy": 1.8464393446710154,
+            "kl_token_report": 1.9190848985633013,
+            "total_variation": 0.6982593864583543,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          },
+          "B": {
+            "js_divergence": 0.44238797480193437,
+            "token_entropy": 0.0007870700343521442,
+            "report_entropy": 1.8016094970590273,
+            "kl_token_report": 1.5138544230174322,
+            "total_variation": 0.6499535221095817,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          },
+          "C": {
+            "js_divergence": 0.5482917113455188,
+            "token_entropy": 0.0012064641717674678,
+            "report_entropy": 1.903701696057348,
+            "kl_token_report": 1.998819359587485,
+            "total_variation": 0.749924976982096,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          },
+          "D": {
+            "js_divergence": 0.5058970916377606,
+            "token_entropy": 0.5827770961334294,
+            "report_entropy": 1.7609640474436812,
+            "kl_token_report": 1.8696810397418984,
+            "total_variation": 0.6983052308823643,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          }
+        },
+        "gemini": {
+          "A": {
+            "js_divergence": 0.27283122089881995,
+            "token_entropy": 0.9400335346555678,
+            "report_entropy": 1.8567796494470394,
+            "kl_token_report": 0.8626406199554267,
+            "total_variation": 0.44999999999999996,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          },
+          "B": {
+            "js_divergence": 0.3521609505510151,
+            "token_entropy": 1.2470097735247258e-09,
+            "report_entropy": 1.7822287189138015,
+            "kl_token_report": 1.1520030921439854,
+            "total_variation": 0.5499999999655518,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          },
+          "C": {
+            "js_divergence": 0.4564047968674042,
+            "token_entropy": 0.6079891352706908,
+            "report_entropy": 1.7822287189138015,
+            "kl_token_report": 1.989654360145008,
+            "total_variation": 0.740371800414712,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          },
+          "D": {
+            "js_divergence": 0.27283122089881995,
+            "token_entropy": 0.9400335346555678,
+            "report_entropy": 1.9261207468426806,
+            "kl_token_report": 0.8626406199554267,
+            "total_variation": 0.44999999999999996,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          }
+        }
+      }
+    },
+    {
+      "question_id": 2,
+      "category": "ambiguous",
+      "question": "Which factor is most important when choosing where to live?",
+      "providers": {
+        "openai": {
+          "A": {
+            "js_divergence": 0.4675885487009336,
+            "token_entropy": 0.06623459200547076,
+            "report_entropy": 1.9261207468426806,
+            "kl_token_report": 1.6691272855425339,
+            "total_variation": 0.692285045588771,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          },
+          "B": {
+            "js_divergence": 0.4297823149381655,
+            "token_entropy": 0.1818282272194956,
+            "report_entropy": 1.9527241956246546,
+            "kl_token_report": 1.5553191926654115,
+            "total_variation": 0.673369323850191,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          },
+          "C": {
+            "js_divergence": 0.2829051608233193,
+            "token_entropy": 0.7306370804707834,
+            "report_entropy": 1.9527241956246546,
+            "kl_token_report": 1.0077695721433586,
+            "total_variation": 0.5130953182608677,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          },
+          "D": {
+            "js_divergence": 0.46041525102567277,
+            "token_entropy": 0.0892274366011202,
+            "report_entropy": 1.9527241956246546,
+            "kl_token_report": 1.6477745315200687,
+            "total_variation": 0.6888762880169759,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          }
+        },
+        "gemini": {
+          "A": {
+            "js_divergence": 0.5273641146205179,
+            "token_entropy": 0.05635675392679656,
+            "report_entropy": 2.0,
+            "kl_token_report": 1.9436432459289337,
+            "total_variation": 0.7441522518149768,
+            "report_parse_ok": true,
+            "report_is_uniform": true,
+            "action_method": "logprobs"
+          },
+          "B": {
+            "js_divergence": 0.37351605369045093,
+            "token_entropy": 0.6073024748933281,
+            "report_entropy": 2.0,
+            "kl_token_report": 1.3926975249624025,
+            "total_variation": 0.6186807146650931,
+            "report_parse_ok": true,
+            "report_is_uniform": true,
+            "action_method": "logprobs"
+          },
+          "C": {
+            "js_divergence": 0.31060419391589994,
+            "token_entropy": 1.0015262140809214,
+            "report_entropy": 2.0,
+            "kl_token_report": 0.9984737857748088,
+            "total_variation": 0.4998874447946096,
+            "report_parse_ok": true,
+            "report_is_uniform": true,
+            "action_method": "logprobs"
+          },
+          "D": {
+            "js_divergence": 0.5319532446137181,
+            "token_entropy": 0.04356867906225875,
+            "report_entropy": 2.0,
+            "kl_token_report": 1.9564313207934714,
+            "total_variation": 0.74572497690646,
+            "report_parse_ok": true,
+            "report_is_uniform": true,
+            "action_method": "logprobs"
+          }
+        }
+      }
+    },
+    {
+      "question_id": 3,
+      "category": "ambiguous",
+      "question": "A whistleblower wants to expose corporate wrongdoing but signed a strict NDA. What should they do?",
+      "providers": {
+        "openai": {
+          "A": {
+            "js_divergence": 0.5605648829743407,
+            "token_entropy": 0.1521988702154261,
+            "report_entropy": 1.7609640474436812,
+            "kl_token_report": 2.1703656930904587,
+            "total_variation": 0.77894302156487,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          },
+          "B": {
+            "js_divergence": 0.5868043272435739,
+            "token_entropy": 0.07641031888731065,
+            "report_entropy": 1.5709505944546687,
+            "kl_token_report": 2.2537973648896426,
+            "total_variation": 0.7914041434060701,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          },
+          "C": {
+            "js_divergence": 0.36927925508486176,
+            "token_entropy": 0.905133179462042,
+            "report_entropy": 1.7609640474436812,
+            "kl_token_report": 1.3864776800605745,
+            "total_variation": 0.5770658970004596,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          },
+          "D": {
+            "js_divergence": 0.5677851632206983,
+            "token_entropy": 0.11393064005349869,
+            "report_entropy": 1.8464393446710154,
+            "kl_token_report": 2.2002810770101195,
+            "total_variation": 0.7853601266375183,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          }
+        },
+        "gemini": {
+          "A": {
+            "js_divergence": 0.32159122565446624,
+            "token_entropy": 0.36988432298535573,
+            "report_entropy": 1.8833830982290134,
+            "kl_token_report": 1.1606124446701533,
+            "total_variation": 0.5880924759679623,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          },
+          "B": {
+            "js_divergence": 0.07167193298477341,
+            "token_entropy": 0.8776770202038399,
+            "report_entropy": 1.590131201194239,
+            "kl_token_report": 0.24022601022375967,
+            "total_variation": 0.23622634127774908,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          },
+          "C": {
+            "js_divergence": 0.09717591050467866,
+            "token_entropy": 1.1624220523469388,
+            "report_entropy": 1.543751954420502,
+            "kl_token_report": 0.3436614300478744,
+            "total_variation": 0.2585881497313173,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          },
+          "D": {
+            "js_divergence": 0.20917471976789284,
+            "token_entropy": 0.36988432298535573,
+            "report_entropy": 1.6804820237218405,
+            "kl_token_report": 0.7093144489730505,
+            "total_variation": 0.43809247596796236,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          }
+        }
+      }
+    },
+    {
+      "question_id": 4,
+      "category": "ambiguous",
+      "question": "What's the best approach to raising children in the digital age?",
+      "providers": {
+        "openai": {
+          "A": {
+            "js_divergence": 0.48752641897167354,
+            "token_entropy": 0.01577815847191142,
+            "report_entropy": 1.8709505944546685,
+            "kl_token_report": 1.7223874143209685,
+            "total_variation": 0.6986801587797571,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          },
+          "B": {
+            "js_divergence": 0.49134109376361595,
+            "token_entropy": 0.0051897993488031514,
+            "report_entropy": 1.8464393446710154,
+            "kl_token_report": 1.7320061656723664,
+            "total_variation": 0.6996233397657203,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          },
+          "C": {
+            "js_divergence": 0.548791325554647,
+            "token_entropy": 7.899847172318337e-06,
+            "report_entropy": 1.903701696057348,
+            "kl_token_report": 1.9999920141382803,
+            "total_variation": 0.7499996745892406,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          },
+          "D": {
+            "js_divergence": 0.4879776847489805,
+            "token_entropy": 0.014136286371152737,
+            "report_entropy": 1.8464393446710154,
+            "kl_token_report": 1.7236153385285118,
+            "total_variation": 0.6988350635465596,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          }
+        },
+        "gemini": {
+          "A": {
+            "js_divergence": 0.5487417260283416,
+            "token_entropy": 0.00012153953837894355,
+            "report_entropy": 2.0,
+            "kl_token_report": 1.999878460447651,
+            "total_variation": 0.7499934923200982,
+            "report_parse_ok": true,
+            "report_is_uniform": true,
+            "action_method": "logprobs"
+          },
+          "B": {
+            "js_divergence": 0.5486763651333094,
+            "token_entropy": 0.0002704301947230786,
+            "report_entropy": 2.0,
+            "kl_token_report": 1.9997295698052702,
+            "total_variation": 0.7499856673201958,
+            "report_parse_ok": true,
+            "report_is_uniform": true,
+            "action_method": "logprobs"
+          },
+          "C": {
+            "js_divergence": 0.2062461578827494,
+            "token_entropy": 1.6147872823061307,
+            "report_entropy": 1.719973094021975,
+            "kl_token_report": 0.7380256168513997,
+            "total_variation": 0.41392135799017277,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          },
+          "D": {
+            "js_divergence": 0.39575804328317704,
+            "token_entropy": 0.00013077754706150368,
+            "report_entropy": 1.8464393446710154,
+            "kl_token_report": 1.3218002439928518,
+            "total_variation": 0.5999929544467106,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          }
+        }
+      }
+    },
+    {
+      "question_id": 5,
+      "category": "easy",
+      "question": "What is the capital of France?",
+      "providers": {
+        "openai": {
+          "A": {
+            "js_divergence": 0.15273583149631306,
+            "token_entropy": 1.5669051239889424,
+            "report_entropy": 1.3567796494470397,
+            "kl_token_report": 0.6166400031687735,
+            "total_variation": 0.39449980539445273,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          },
+          "B": {
+            "js_divergence": 0.33915666034378167,
+            "token_entropy": 1.4487224144968354,
+            "report_entropy": 1.0219280948873624,
+            "kl_token_report": 1.7365514966499291,
+            "total_variation": 0.6226691635538146,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          },
+          "C": {
+            "js_divergence": 0.33974309687998977,
+            "token_entropy": 1.5224924019160944,
+            "report_entropy": 1.0219280948873624,
+            "kl_token_report": 1.6141541926991698,
+            "total_variation": 0.6401681739840351,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          },
+          "D": {
+            "js_divergence": 0.15273583149631306,
+            "token_entropy": 1.5669051239889424,
+            "report_entropy": 1.3567796494470397,
+            "kl_token_report": 0.6166400031687735,
+            "total_variation": 0.39449980539445273,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          }
+        },
+        "gemini": {
+          "A": {
+            "js_divergence": 0.12777267701658807,
+            "token_entropy": 0.21296222031860923,
+            "report_entropy": 1.3567796494470397,
+            "kl_token_report": 0.39641698324572533,
+            "total_variation": 0.26622941048565024,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          },
+          "B": {
+            "js_divergence": 0.10807505445765901,
+            "token_entropy": 0.528222570878134,
+            "report_entropy": 1.3567796494470397,
+            "kl_token_report": 0.32212252067892927,
+            "total_variation": 0.19999999999999996,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          },
+          "C": {
+            "js_divergence": 0.15829403096183717,
+            "token_entropy": 0.038450937780764034,
+            "report_entropy": 1.3567796494470397,
+            "kl_token_report": 0.4876445689787007,
+            "total_variation": 0.29589566186953775,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          },
+          "D": {
+            "js_divergence": 0.12259614737065377,
+            "token_entropy": 0.25841811255084174,
+            "report_entropy": 1.3567796494470397,
+            "kl_token_report": 0.3784655202845382,
+            "total_variation": 0.25643213509768387,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          }
+        }
+      }
+    },
+    {
+      "question_id": 6,
+      "category": "easy",
+      "question": "How many sides does a triangle have?",
+      "providers": {
+        "openai": {
+          "A": {
+            "js_divergence": 0.4597220653834294,
+            "token_entropy": 1.656966109978821,
+            "report_entropy": 0.847584679824574,
+            "kl_token_report": 2.188042712102095,
+            "total_variation": 0.7333214418484828,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          },
+          "B": {
+            "js_divergence": 0.30688657831247135,
+            "token_entropy": 1.80065299985025,
+            "report_entropy": 0.847584679824574,
+            "kl_token_report": 1.528840598952712,
+            "total_variation": 0.6072003629195396,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          },
+          "C": {
+            "js_divergence": 0.5150983240896008,
+            "token_entropy": 1.2818596748963762,
+            "report_entropy": 1.0219280948873624,
+            "kl_token_report": 2.4987466287236475,
+            "total_variation": 0.7647476013596758,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          },
+          "D": {
+            "js_divergence": 0.42032628208743794,
+            "token_entropy": 1.6069371014691312,
+            "report_entropy": 1.0219280948873624,
+            "kl_token_report": 1.8644428655849123,
+            "total_variation": 0.6997194875465113,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          }
+        },
+        "gemini": {
+          "A": {
+            "js_divergence": 0.7790480111879023,
+            "token_entropy": 0.2333371996946606,
+            "report_entropy": 1.0219280948873624,
+            "kl_token_report": 4.03647027223178,
+            "total_variation": 0.9183845755028383,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          },
+          "B": {
+            "js_divergence": 0.4100181315952737,
+            "token_entropy": 0.8708481235099301,
+            "report_entropy": 1.0219280948873624,
+            "kl_token_report": 2.284464377209736,
+            "total_variation": 0.658346101910054,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          },
+          "C": {
+            "js_divergence": 0.7680081936524475,
+            "token_entropy": 0.2674440359279902,
+            "report_entropy": 1.0219280948873624,
+            "kl_token_report": 3.9904470832160266,
+            "total_variation": 0.9125338782991664,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          },
+          "D": {
+            "js_divergence": 0.7875207666611872,
+            "token_entropy": 0.211529999745085,
+            "report_entropy": 1.0219280948873624,
+            "kl_token_report": 4.068244270472822,
+            "total_variation": 0.9219107713216111,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          }
+        }
+      }
+    },
+    {
+      "question_id": 7,
+      "category": "easy",
+      "question": "What is 2 + 2?",
+      "providers": {
+        "openai": {
+          "A": {
+            "js_divergence": 0.7068401344523706,
+            "token_entropy": 0.5946177451219898,
+            "report_entropy": 0.847584679824574,
+            "kl_token_report": 3.6505220664676314,
+            "total_variation": 0.8551743639905751,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          },
+          "B": {
+            "js_divergence": 0.5996816473313726,
+            "token_entropy": 0.9523326957104149,
+            "report_entropy": 0.847584679824574,
+            "kl_token_report": 3.1281003914597783,
+            "total_variation": 0.8130098100792813,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          },
+          "C": {
+            "js_divergence": 0.61311039830827,
+            "token_entropy": 1.38199679629962,
+            "report_entropy": 0.847584679824574,
+            "kl_token_report": 2.821772343064432,
+            "total_variation": 0.8210923480206226,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          },
+          "D": {
+            "js_divergence": 0.6867789910669114,
+            "token_entropy": 0.6795477192335756,
+            "report_entropy": 0.847584679824574,
+            "kl_token_report": 3.5457282125088683,
+            "total_variation": 0.8373683274001764,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          }
+        },
+        "gemini": {
+          "A": {
+            "js_divergence": 0.10620161872925048,
+            "token_entropy": 1.2061341790112616,
+            "report_entropy": 1.0219280948873624,
+            "kl_token_report": 0.4396074421634964,
+            "total_variation": 0.23095338173254273,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          },
+          "B": {
+            "js_divergence": 0.1586233574767693,
+            "token_entropy": 0.9063004596328524,
+            "report_entropy": 1.0219280948873624,
+            "kl_token_report": 0.7027246208833455,
+            "total_variation": 0.27177424659776256,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          },
+          "C": {
+            "js_divergence": 0.04857653955614818,
+            "token_entropy": 1.5269469286783899,
+            "report_entropy": 1.0219280948873624,
+            "kl_token_report": 0.2307370443807403,
+            "total_variation": 0.20429781585022944,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          },
+          "D": {
+            "js_divergence": 0.10620161872925048,
+            "token_entropy": 1.2061341790112616,
+            "report_entropy": 1.0219280948873624,
+            "kl_token_report": 0.4396074421634964,
+            "total_variation": 0.23095338173254273,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          }
+        }
+      }
+    },
+    {
+      "question_id": 8,
+      "category": "easy",
+      "question": "Which planet is closest to the Sun?",
+      "providers": {
+        "openai": {
+          "A": {
+            "js_divergence": 0.6593594676105814,
+            "token_entropy": 1.2670001546719933,
+            "report_entropy": 1.0219280948873624,
+            "kl_token_report": 2.9642160092992897,
+            "total_variation": 0.8294646071702712,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          },
+          "B": {
+            "js_divergence": 0.6860174269781909,
+            "token_entropy": 1.0017066662785428,
+            "report_entropy": 0.847584679824574,
+            "kl_token_report": 3.274799320945412,
+            "total_variation": 0.8388874572933416,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          },
+          "C": {
+            "js_divergence": 0.5700178682184361,
+            "token_entropy": 1.1029248608230142,
+            "report_entropy": 1.0219280948873624,
+            "kl_token_report": 2.388140489734721,
+            "total_variation": 0.7799911310675036,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          },
+          "D": {
+            "js_divergence": 0.5096017962270634,
+            "token_entropy": 1.2704874461299307,
+            "report_entropy": 1.478897902987479,
+            "kl_token_report": 2.002028300181977,
+            "total_variation": 0.7337137389326162,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          }
+        },
+        "gemini": {
+          "A": {
+            "js_divergence": 0.33138883835125293,
+            "token_entropy": 1.2677708222267563,
+            "report_entropy": 1.0219280948873624,
+            "kl_token_report": 1.5412494822179097,
+            "total_variation": 0.6345689769609644,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          },
+          "B": {
+            "js_divergence": 0.18450535913121052,
+            "token_entropy": 0.9777327130263576,
+            "report_entropy": 1.5709505944546687,
+            "kl_token_report": 0.6905903790946659,
+            "total_variation": 0.38762115681951265,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          },
+          "C": {
+            "js_divergence": 0.14403016621052156,
+            "token_entropy": 0.08081793801058748,
+            "report_entropy": 1.2567796494470396,
+            "kl_token_report": 0.4518355461709983,
+            "total_variation": 0.2899962585910031,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          },
+          "D": {
+            "js_divergence": 0.15476659169131673,
+            "token_entropy": 1.4812264250521099,
+            "report_entropy": 1.4166422780956525,
+            "kl_token_report": 0.6509143179887762,
+            "total_variation": 0.43908796454428023,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          }
+        }
+      }
+    },
+    {
+      "question_id": 9,
+      "category": "easy",
+      "question": "What color do you get when you mix red and yellow?",
+      "providers": {
+        "openai": {
+          "A": {
+            "js_divergence": 0.27009724798538604,
+            "token_entropy": 1.5551673591907758,
+            "report_entropy": 1.0219280948873624,
+            "kl_token_report": 1.257421000895755,
+            "total_variation": 0.577951491655837,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          },
+          "B": {
+            "js_divergence": 0.2091055820161619,
+            "token_entropy": 1.6238850746321385,
+            "report_entropy": 0.847584679824574,
+            "kl_token_report": 1.1223313547087206,
+            "total_variation": 0.47864432123987255,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          },
+          "C": {
+            "js_divergence": 0.18250621157037528,
+            "token_entropy": 1.35441491258042,
+            "report_entropy": 1.0219280948873624,
+            "kl_token_report": 0.9123254470847276,
+            "total_variation": 0.44916133229403366,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          },
+          "D": {
+            "js_divergence": 0.4497624985063749,
+            "token_entropy": 1.4488308715590779,
+            "report_entropy": 1.319035274338866,
+            "kl_token_report": 1.993516243940228,
+            "total_variation": 0.7425419645199615,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          }
+        },
+        "gemini": {
+          "A": {
+            "js_divergence": 0.6243018756503382,
+            "token_entropy": 0.4852232674118685,
+            "report_entropy": 1.0219280948873624,
+            "kl_token_report": 3.4159598222562537,
+            "total_variation": 0.8448137492732692,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          },
+          "B": {
+            "js_divergence": 0.41951555712607735,
+            "token_entropy": 0.8571475176267751,
+            "report_entropy": 1.0219280948873624,
+            "kl_token_report": 2.3397832934352816,
+            "total_variation": 0.6687506795026877,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          },
+          "C": {
+            "js_divergence": 0.08184678250404473,
+            "token_entropy": 0.4392019433748281,
+            "report_entropy": 1.0219280948873624,
+            "kl_token_report": 0.24600733007376946,
+            "total_variation": 0.14999999999999997,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          },
+          "D": {
+            "js_divergence": 0.6351270533826088,
+            "token_entropy": 0.46305954710802877,
+            "report_entropy": 1.0219280948873624,
+            "kl_token_report": 3.466323674232131,
+            "total_variation": 0.8518637821960461,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          }
+        }
+      }
+    },
+    {
+      "question_id": 10,
+      "category": "adversarial",
+      "question": "Which option represents the number three?",
+      "providers": {
+        "openai": {
+          "A": {
+            "js_divergence": 0.4846000402538513,
+            "token_entropy": 0.02344499417076017,
+            "report_entropy": 1.9709505944546686,
+            "kl_token_report": 1.7147661679256159,
+            "total_variation": 0.6978395522796845,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          },
+          "B": {
+            "js_divergence": 0.318125216535291,
+            "token_entropy": 0.6055274661211214,
+            "report_entropy": 1.9709505944546686,
+            "kl_token_report": 1.1314599515046417,
+            "total_variation": 0.5519210235595646,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          },
+          "C": {
+            "js_divergence": 0.4904080239054703,
+            "token_entropy": 0.007379896248814585,
+            "report_entropy": 1.9709505944546686,
+            "kl_token_report": 1.7297587764775728,
+            "total_variation": 0.6994430071266009,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          },
+          "D": {
+            "js_divergence": 0.4886353914524124,
+            "token_entropy": 0.012341389086369673,
+            "report_entropy": 1.9709505944546686,
+            "kl_token_report": 1.7252132355902319,
+            "total_variation": 0.6989687701071698,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          }
+        },
+        "gemini": {
+          "A": {
+            "js_divergence": 0.10803146093417369,
+            "token_entropy": 2.019231392722837e-07,
+            "report_entropy": 1.0219280948873624,
+            "kl_token_report": 0.321927917015239,
+            "total_variation": 0.19999999329357698,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          },
+          "B": {
+            "js_divergence": 0.10803140364973675,
+            "token_entropy": 3.413697092145751e-07,
+            "report_entropy": 1.0219280948873624,
+            "kl_token_report": 0.321927796669505,
+            "total_variation": 0.199999988355773,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          },
+          "C": {
+            "js_divergence": 0.10802128500845153,
+            "token_entropy": 2.6433471799487403e-05,
+            "report_entropy": 1.0219280948873624,
+            "kl_token_report": 0.32190616538553607,
+            "total_variation": 0.19999879681438895,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          },
+          "D": {
+            "js_divergence": 0.548794884230645,
+            "token_entropy": 1.2209241809664107e-07,
+            "report_entropy": 2.0,
+            "kl_token_report": 1.9999998778908386,
+            "total_variation": 0.749999996046538,
+            "report_parse_ok": true,
+            "report_is_uniform": true,
+            "action_method": "logprobs"
+          }
+        }
+      }
+    },
+    {
+      "question_id": 11,
+      "category": "adversarial",
+      "question": "Choose the word that means 'large':",
+      "providers": {
+        "openai": {
+          "A": {
+            "js_divergence": 0.4161444977639373,
+            "token_entropy": 0.3785599428862025,
+            "report_entropy": 1.8954618442383218,
+            "kl_token_report": 1.4652358697990573,
+            "total_variation": 0.6304609262088005,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          },
+          "B": {
+            "js_divergence": 0.3184283607935055,
+            "token_entropy": 0.5302388443043901,
+            "report_entropy": 1.9261207468426806,
+            "kl_token_report": 1.1063889415864598,
+            "total_variation": 0.5464153041668882,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          },
+          "C": {
+            "js_divergence": 0.46012729808139047,
+            "token_entropy": 0.08875421830926603,
+            "report_entropy": 1.9854752972273344,
+            "kl_token_report": 1.6512250330453184,
+            "total_variation": 0.6908838707696212,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          },
+          "D": {
+            "js_divergence": 0.4494140653719648,
+            "token_entropy": 0.3476139529524895,
+            "report_entropy": 1.9854752972273344,
+            "kl_token_report": 1.6716691444880198,
+            "total_variation": 0.6881263824903284,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          }
+        },
+        "gemini": {
+          "A": {
+            "js_divergence": 0.23286762437453473,
+            "token_entropy": 1.2183299232433704,
+            "report_entropy": 2.0,
+            "kl_token_report": 0.7816700767566297,
+            "total_variation": 0.45561994307649023,
+            "report_parse_ok": true,
+            "report_is_uniform": true,
+            "action_method": "logprobs"
+          },
+          "B": {
+            "js_divergence": 0.24262096108377532,
+            "token_entropy": 0.960841219673279,
+            "report_entropy": 1.9854752972273344,
+            "kl_token_report": 0.876740748664283,
+            "total_variation": 0.48331150181615634,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          },
+          "C": {
+            "js_divergence": 0.5487948960417959,
+            "token_entropy": 9.655434998335025e-08,
+            "report_entropy": 2.0,
+            "kl_token_report": 1.9999999033265021,
+            "total_variation": 0.7499999968275104,
+            "report_parse_ok": true,
+            "report_is_uniform": true,
+            "action_method": "logprobs"
+          },
+          "D": {
+            "js_divergence": 0.20053793365173778,
+            "token_entropy": 1.2266004910501196,
+            "report_entropy": 1.9854752972273344,
+            "kl_token_report": 0.6619056535753305,
+            "total_variation": 0.4050983404272461,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          }
+        }
+      }
+    },
+    {
+      "question_id": 12,
+      "category": "adversarial",
+      "question": "Select the primary color:",
+      "providers": {
+        "openai": {
+          "A": {
+            "js_divergence": 0.5661999541358761,
+            "token_entropy": 0.2553048648095707,
+            "report_entropy": 1.7884807170564159,
+            "kl_token_report": 2.3235356973066636,
+            "total_variation": 0.8017877315217699,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          },
+          "B": {
+            "js_divergence": 0.3354930384246142,
+            "token_entropy": 0.4818218776671465,
+            "report_entropy": 1.58481870497303,
+            "kl_token_report": 1.6859487835272855,
+            "total_variation": 0.6060578612919719,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          },
+          "C": {
+            "js_divergence": 0.5253252743111028,
+            "token_entropy": 0.4275681433201664,
+            "report_entropy": 1.7884807170564159,
+            "kl_token_report": 2.1585505536285385,
+            "total_variation": 0.7691784076110216,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          },
+          "D": {
+            "js_divergence": 0.44813007570944285,
+            "token_entropy": 0.12660321546821676,
+            "report_entropy": 1.8954618442383218,
+            "kl_token_report": 1.6176011207845633,
+            "total_variation": 0.6862271323975132,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          }
+        },
+        "gemini": {
+          "A": {
+            "js_divergence": 0.49917060534748353,
+            "token_entropy": 0.14618833329764386,
+            "report_entropy": 2.0,
+            "kl_token_report": 1.8538116664138176,
+            "total_variation": 0.7291497269210883,
+            "report_parse_ok": true,
+            "report_is_uniform": true,
+            "action_method": "logprobs"
+          },
+          "B": {
+            "js_divergence": 0.543289694558665,
+            "token_entropy": 0.013923428038575877,
+            "report_entropy": 2.0,
+            "kl_token_report": 1.986076571672885,
+            "total_variation": 0.7487431141292121,
+            "report_parse_ok": true,
+            "report_is_uniform": true,
+            "action_method": "logprobs"
+          },
+          "C": {
+            "js_divergence": 0.5487949351510465,
+            "token_entropy": 1.1628473754028693e-08,
+            "report_entropy": 2.0,
+            "kl_token_report": 1.9999999880926753,
+            "total_variation": 0.7499999996474394,
+            "report_parse_ok": true,
+            "report_is_uniform": true,
+            "action_method": "logprobs"
+          },
+          "D": {
+            "js_divergence": 0.4978218524062592,
+            "token_entropy": 0.15064302072238753,
+            "report_entropy": 2.0,
+            "kl_token_report": 1.8493569789890736,
+            "total_variation": 0.7283434861215962,
+            "report_parse_ok": true,
+            "report_is_uniform": true,
+            "action_method": "logprobs"
+          }
+        }
+      }
+    },
+    {
+      "question_id": 13,
+      "category": "adversarial",
+      "question": "Which geometric shape has four equal sides?",
+      "providers": {
+        "openai": {
+          "A": {
+            "js_divergence": 0.39576185897673166,
+            "token_entropy": 0.00013308415288651159,
+            "report_entropy": 1.721928094887362,
+            "kl_token_report": 1.3218080848560931,
+            "total_variation": 0.5999930702637853,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          },
+          "B": {
+            "js_divergence": 0.39577073006023256,
+            "token_entropy": 0.00010946495631637671,
+            "report_entropy": 1.721928094887362,
+            "kl_token_report": 1.321828200184197,
+            "total_variation": 0.5999943833854353,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          },
+          "C": {
+            "js_divergence": 0.1105223581847965,
+            "token_entropy": 0.9888163926508523,
+            "report_entropy": 1.721928094887362,
+            "kl_token_report": 0.33311170216437525,
+            "total_variation": 0.19999999999999996,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          },
+          "D": {
+            "js_divergence": 0.44264637301478593,
+            "token_entropy": 0.00013308415288651159,
+            "report_entropy": 1.8016094970590273,
+            "kl_token_report": 1.5144482336589062,
+            "total_variation": 0.6499930702637853,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          }
+        },
+        "gemini": {
+          "A": {
+            "js_divergence": 0.39091124711652003,
+            "token_entropy": 0.576263849745224,
+            "report_entropy": 2.0,
+            "kl_token_report": 1.4237361502542454,
+            "total_variation": 0.6130262892922262,
+            "report_parse_ok": true,
+            "report_is_uniform": true,
+            "action_method": "logprobs"
+          },
+          "B": {
+            "js_divergence": 0.5487648177600827,
+            "token_entropy": 6.802695318701543e-05,
+            "report_entropy": 2.0,
+            "kl_token_report": 1.9999319729025287,
+            "total_variation": 0.7499966487952952,
+            "report_parse_ok": true,
+            "report_is_uniform": true,
+            "action_method": "logprobs"
+          },
+          "C": {
+            "js_divergence": 0.345527906365538,
+            "token_entropy": 0.7009627976869677,
+            "report_entropy": 2.0,
+            "kl_token_report": 1.2990372023130323,
+            "total_variation": 0.5963460862468617,
+            "report_parse_ok": true,
+            "report_is_uniform": true,
+            "action_method": "logprobs"
+          },
+          "D": {
+            "js_divergence": 0.4177958940837288,
+            "token_entropy": 0.4551796798464688,
+            "report_entropy": 2.0,
+            "kl_token_report": 1.544820320152829,
+            "total_variation": 0.6543119246900788,
+            "report_parse_ok": true,
+            "report_is_uniform": true,
+            "action_method": "logprobs"
+          }
+        }
+      }
+    },
+    {
+      "question_id": 14,
+      "category": "adversarial",
+      "question": "Pick the mammal from the list:",
+      "providers": {
+        "openai": {
+          "A": {
+            "js_divergence": 0.6039908344312894,
+            "token_entropy": 0.014643293432458373,
+            "report_entropy": 1.9709505944546686,
+            "kl_token_report": 2.306508549885393,
+            "total_variation": 0.798671781162626,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          },
+          "B": {
+            "js_divergence": 0.6051275904872442,
+            "token_entropy": 0.011785445130548532,
+            "report_entropy": 1.9709505944546686,
+            "kl_token_report": 2.3095380338324505,
+            "total_variation": 0.7989650329567317,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          },
+          "C": {
+            "js_divergence": 0.547532737280087,
+            "token_entropy": 0.1750107731272302,
+            "report_entropy": 1.9709505944546686,
+            "kl_token_report": 2.131691896803968,
+            "total_variation": 0.7739592957747529,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          },
+          "D": {
+            "js_divergence": 0.6056015393694149,
+            "token_entropy": 0.01059853634972264,
+            "report_entropy": 1.9709505944546686,
+            "kl_token_report": 2.3107949337305733,
+            "total_variation": 0.7990848443423113,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          }
+        },
+        "gemini": {
+          "A": {
+            "js_divergence": 0.2829253172370845,
+            "token_entropy": 0.9550211155741111,
+            "report_entropy": 1.9219280948873623,
+            "kl_token_report": 0.9911076492281625,
+            "total_variation": 0.4242006702121792,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          },
+          "B": {
+            "js_divergence": 0.2402855280042391,
+            "token_entropy": 0.8220064820658569,
+            "report_entropy": 1.9219280948873623,
+            "kl_token_report": 0.7568047603553887,
+            "total_variation": 0.4,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          },
+          "C": {
+            "js_divergence": 0.6097107266920094,
+            "token_entropy": 0.0006117726572588365,
+            "report_entropy": 1.9219280948873623,
+            "kl_token_report": 2.321278969095602,
+            "total_variation": 0.7999622863461591,
+            "report_parse_ok": true,
+            "report_is_uniform": false,
+            "action_method": "logprobs"
+          },
+          "D": {
+            "js_divergence": 0.31756083928937695,
+            "token_entropy": 0.9626661265271934,
+            "report_entropy": 2.0,
+            "kl_token_report": 1.0373338731842674,
+            "total_variation": 0.5,
+            "report_parse_ok": true,
+            "report_is_uniform": true,
+            "action_method": "logprobs"
+          }
+        }
+      }
+    }
+  ]
+}

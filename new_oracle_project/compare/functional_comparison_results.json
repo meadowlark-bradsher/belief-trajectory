@@ -1,0 +1,29 @@
+{
+  "results": [
+    {
+      "model": "GPT-4o-mini",
+      "questions": 50,
+      "very_rare_pct": 16.0,
+      "rare_pct": 36.0,
+      "skewed_pct": 44.0,
+      "balanced_pct": 4.0,
+      "all_yes": 0,
+      "all_no": 1,
+      "useless_pct": 2.0,
+      "avg_yes_count": 22.76,
+      "coverage_feasible": false,
+      "coverage_gaps": [
+        "balanced: have 2, need 45",
+        "very_rare: have 8, need 21"
+      ],
+      "optimal_sample_size": 450,
+      "pathological": [
+        "208589: 'Is it something that relates to a specif...' (0/128 YES)"
+      ],
+      "score": 0.78109375
+    }
+  ],
+  "consistencies": {
+    "GPT-4o-mini": 0.98046875
+  }
+}

@@ -1,136 +1,62 @@
-# Belief Trajectory Generator
+# CLAUDE.md
 
-Synthetic trajectory generator for 20 Questions games that stress-test specific MAST failure modes (T1-T8 archetypes).
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-## Setup
+## Project Overview
 
-### 1. Install dependencies
+Synthetic trajectory generator for 20 Questions games that stress-test MAST (Model-Agnostic Stress Testing) failure modes. Generates trajectories (T1-T8 archetypes) with specific entropy/information-gain patterns to evaluate how agents handle edge cases in belief updating.
 
-```bash
-pip install -r requirements.txt  # (none currently - stdlib only)
-```
-
-### 2. Download CUQ dataset
-
-Place the CUQ dataset files in `data/`:
-
-```
-data/
-├── questions.jsonl   # 122,913 questions with bitmasks
-└── items.txt         # 128 items (secrets)
-```
-
-### 3. Verify installation
+## Commands
 
 ```bash
-python run.py list-items  # Should list 128 items
-```
-
-## Quick Start
-
-```bash
-# Generate a single trajectory
+# Generate single trajectory (prints to console)
 python run.py single --type T2
 
 # Generate with overlays
-python run.py single --type T8 --termination wrong_guess
+python run.py single --type T8 --termination wrong_guess --overlay calibrated
 
-# Batch generation (100 per type)
+# Batch generation
 python run.py batch --count 800 --distribution uniform --output-dir outputs/batch
 
-# Validate existing trajectories
+# Validate trajectories against gate constraints
 python run.py validate outputs/batch --show-failures
+
+# List available items/secrets
+python run.py list-items
 ```
 
-## Trajectory Archetypes
+No tests currently. No build step (stdlib only, no dependencies).
 
-| Type | Archetype | MAST Mode | Key Property |
-|------|-----------|-----------|--------------|
-| T1 | Smooth halving | baseline | Balanced splits throughout |
-| T2 | Early collapse | FM-2.6 | Rare branch early + late |
-| T3 | Plateau | FM-3.1 | Low-IG streak, then resolution |
-| T4 | Redundant loop | FM-1.3 | Consecutive low-IG questions |
-| T5 | Multi-modal | FM-2.2 | Skewed mid-game ambiguity |
-| T6 | Prediction mismatch | FM-2.6 | Calibrated vs oracle mismatch |
-| T7 | Late shock | FM-3.1 | Rare branch at end |
-| T8 | Wrong verification | FM-3.3 | Incorrect guess with claim |
+## Architecture
 
-## Overlays
+### Two Generation Modes
 
-### Prediction (belief-report channel)
-- `calibrated` - Argmax with calibrated confidence
-- `overconfident` - Always 95% confidence
-- `always_yes` - Always predicts YES
-- `sticky` - Persists high-confidence predictions
-- `commit_early` - Locks to MAP after threshold
-- `refuses_revise` - Keeps wrong answer K turns
+**Secret-first** (`SecretFirstGenerator`): Picks secret first, answers derive from secret. Used for T1, T6.
 
-### Termination (action channel)
-- `rational` - Guess when |S|=1
-- `premature_stop` - Stop at high entropy
-- `unaware` - Continue past termination point
-- `wrong_guess` - Incorrect guess with verification claim
+**Path-first** (`PathFirstGenerator`): Builds question-answer sequence following split ratio constraints, samples secret from final feasible set. Used for T2-T5, T7-T8.
 
-## Output Format
+### Core Data Flow
 
-```json
-{
-  "trajectory_id": "abc123",
-  "trajectory_type": "T8",
-  "target_mast_modes": ["FM-3.3"],
-  "overlay_tags": ["pred:calibrated_argmax", "term:wrong_guess", "verify:claim_present"],
-  "secret": "Horse",
-  "turns": [
-    {
-      "turn": 4,
-      "question": "Is it used for decoration?",
-      "answer": false,
-      "entropy_before": 2.32,
-      "entropy_after": 1.58,
-      "model_action": "guess",
-      "guess": {
-        "secret": "Watermelon",
-        "confidence": 0.9,
-        "verification_claim": "The secret must be 'Watermelon' because..."
-      },
-      "guess_correct": false,
-      "stop_accepted": false
-    }
-  ]
-}
-```
+1. `CUQDataset` loads questions (122K with bitmasks) and items (128 secrets) from `data/`
+2. `QuestionIndex` provides fast lookups by split ratio, information gain, redundancy
+3. Generators use `bitmask.py` for 128-bit feasible set operations (entropy, split_ratio, update_state)
+4. `archetypes.py` defines per-turn constraints (split ranges, branch policies) for each T1-T8 type
+5. `OverlayChain` applies termination + prediction behaviors post-generation
+6. `validators.py` checks if trajectories meet their type's gate constraints
 
-## Gate Validators
+### Key Abstractions
 
-Each trajectory type has an automated gate validator:
+- **Bitmask state**: Python int representing 128-bit feasible set. Core operations in `bitmask.py`.
+- **SplitConstraint**: Per-turn rules (ratio bounds, branch policy, special requirements like `require_no_op`)
+- **Overlays**: Two families - prediction (belief-report channel) and termination (action channel). Applied via `OverlayChain`.
+- **Gate validators**: Type-specific checks (e.g., T1 requires all balanced splits, T8 requires wrong guess with verification_claim)
 
-```bash
-python run.py validate outputs/ --show-failures
-```
+### MAST Mode Derivation
 
-| Type | Gate Checks |
-|------|-------------|
-| T1 | All splits balanced |
-| T2 | Early + late rare branches |
-| T3 | Plateau + resolution |
-| T4 | Consecutive low-IG |
-| T5 | Skewed mid-game |
-| T6 | (none) |
-| T7 | Late rare branch |
-| T8 | Wrong guess + verification_claim |
+`models.derive_mast_modes()` computes which failure modes a trajectory actually instantiates based on trajectory type + overlay tags. The static `TRAJECTORY_MAST_MAPPING` is legacy; prefer the derived version.
 
-## Project Structure
+## Data Requirements
 
-```
-├── run.py              # CLI entry point
-├── data/               # CUQ dataset (not committed)
-├── outputs/            # Generated trajectories
-└── src/
-    ├── models.py       # Trajectory dataclasses
-    ├── loader.py       # Dataset loading
-    ├── index.py        # Question indexing
-    ├── bitmask.py      # 128-bit operations
-    ├── validators.py   # Gate validators
-    ├── generators/     # T1-T8 generators
-    └── overlays/       # Prediction + termination
-```
+Place CUQ dataset in `data/`:
+- `questions.jsonl` - 122,913 questions with `question_id`, `question`, `bitmask` (int)
+- `items.txt` - 128 item names, one per line

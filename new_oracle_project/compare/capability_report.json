@@ -1,0 +1,129 @@
+{
+  "total_questions": 17830,
+  "conditional_coverage": {
+    "128": {
+      "size": 128,
+      "balanced": 384,
+      "plateau_high": 58,
+      "plateau_low": 7026,
+      "near_plateau_high": 84,
+      "near_plateau_low": 6451,
+      "shock_high": 120,
+      "shock_low": 2140,
+      "noop": 2568
+    },
+    "64": {
+      "size": 64,
+      "balanced": 1117,
+      "plateau_high": 130,
+      "plateau_low": 13193,
+      "near_plateau_high": 209,
+      "near_plateau_low": 10425,
+      "shock_high": 310,
+      "shock_low": 5404,
+      "noop": 11842
+    },
+    "32": {
+      "size": 32,
+      "balanced": 1790,
+      "plateau_high": 175,
+      "plateau_low": 14655,
+      "near_plateau_high": 347,
+      "near_plateau_low": 13805,
+      "shock_high": 519,
+      "shock_low": 8000,
+      "noop": 14830
+    },
+    "16": {
+      "size": 16,
+      "balanced": 2773,
+      "plateau_high": 429,
+      "plateau_low": 16249,
+      "near_plateau_high": 572,
+      "near_plateau_low": 14204,
+      "shock_high": 821,
+      "shock_low": 11817,
+      "noop": 16678
+    },
+    "8": {
+      "size": 8,
+      "balanced": 4253,
+      "plateau_high": 807,
+      "plateau_low": 17075,
+      "near_plateau_high": 0,
+      "near_plateau_low": 0,
+      "shock_high": 1140,
+      "shock_low": 14774,
+      "noop": 17780
+    },
+    "4": {
+      "size": 4,
+      "balanced": 9544,
+      "plateau_high": 1673,
+      "plateau_low": 17480,
+      "near_plateau_high": 0,
+      "near_plateau_low": 0,
+      "shock_high": 0,
+      "shock_low": 0,
+      "noop": 17830
+    }
+  },
+  "trajectory_feasibility": {
+    "T1": {
+      "pass_rate": 0.7,
+      "attempts_for_2k": 2857,
+      "feasible": true,
+      "bottlenecks": []
+    },
+    "T2": {
+      "pass_rate": 0.3,
+      "attempts_for_2k": 6666,
+      "feasible": true,
+      "bottlenecks": []
+    },
+    "T3": {
+      "pass_rate": 0.4,
+      "attempts_for_2k": 5000,
+      "feasible": true,
+      "bottlenecks": []
+    },
+    "T4": {
+      "pass_rate": 0.5,
+      "attempts_for_2k": 4000,
+      "feasible": true,
+      "bottlenecks": []
+    },
+    "T5": {
+      "pass_rate": 0.6,
+      "attempts_for_2k": 3333,
+      "feasible": true,
+      "bottlenecks": []
+    },
+    "T6": {
+      "pass_rate": 0.7,
+      "attempts_for_2k": 2857,
+      "feasible": true,
+      "bottlenecks": []
+    },
+    "T7": {
+      "pass_rate": 0.5,
+      "attempts_for_2k": 4000,
+      "feasible": true,
+      "bottlenecks": []
+    },
+    "T8": {
+      "pass_rate": 0.6,
+      "attempts_for_2k": 3333,
+      "feasible": true,
+      "bottlenecks": []
+    }
+  },
+  "gaps": [],
+  "quality_score": 0.5349999999999999,
+  "summary": {
+    "avg_pass_rate": 0.5375,
+    "min_pass_rate": 0.3,
+    "feasible_types": 8,
+    "critical_gaps": 0
+  }
+}

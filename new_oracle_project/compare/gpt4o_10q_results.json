@@ -1,0 +1,47 @@
+{
+  "results": [
+    {
+      "question_id": "186308",
+      "yes_count": 16
+    },
+    {
+      "question_id": "24955",
+      "yes_count": 31
+    },
+    {
+      "question_id": "87202",
+      "yes_count": 2
+    },
+    {
+      "question_id": "223606",
+      "yes_count": 22
+    },
+    {
+      "question_id": "134870",
+      "yes_count": 0
+    },
+    {
+      "question_id": "60554",
+      "yes_count": 4
+    },
+    {
+      "question_id": "54406",
+      "yes_count": 6
+    },
+    {
+      "question_id": "31940",
+      "yes_count": 54
+    },
+    {
+      "question_id": "221668",
+      "yes_count": 0
+    },
+    {
+      "question_id": "78606",
+      "yes_count": 2
+    }
+  ],
+  "mean_yes": 13.7,
+  "all_yes": 0,
+  "all_no": 2
+}

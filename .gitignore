@@ -25,6 +25,13 @@ data/
 # Outputs (regeneratable)
 outputs/
 
+# Large generated data files
+*.jsonl
+new_oracle_project/compare/batch_questions.json
+
 # OS
 .DS_Store
 Thumbs.db
+
+# Environment
+.env

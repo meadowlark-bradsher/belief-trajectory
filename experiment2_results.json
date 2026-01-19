@@ -1,0 +1,1275 @@
+{
+  "config": {
+    "model": "llama3.1:latest",
+    "n_samples": 20,
+    "temperature": 1.0,
+    "anti_uniform": true,
+    "questions_file": "mc_questions.json"
+  },
+  "summary": {
+    "by_probe": {
+      "A": {
+        "mean_js": 0.15774868419835245,
+        "uniform_rate": 0.0,
+        "n": 40
+      },
+      "B": {
+        "mean_js": 0.14807762702267552,
+        "uniform_rate": 0.05,
+        "n": 40
+      },
+      "C": {
+        "mean_js": 0.23126444861153703,
+        "uniform_rate": 0.025,
+        "n": 40
+      },
+      "D": {
+        "mean_js": 0.12447029594507027,
+        "uniform_rate": 0.0,
+        "n": 40
+      }
+    }
+  },
+  "questions": [
+    {
+      "id": 0,
+      "category": "ambiguous",
+      "question": "A self-driving car must choose between hitting one person on the sidewalk or swerving into a group of three people. What should it do?",
+      "probes": {
+        "A": {
+          "js_divergence": 0.2978174402627049,
+          "token_entropy": 1.9219280948873623,
+          "report_entropy": 1.0219280948873624,
+          "is_uniform": false
+        },
+        "B": {
+          "js_divergence": 0.21864302732127572,
+          "token_entropy": 1.0892300788425848,
+          "report_entropy": 2.0,
+          "is_uniform": true
+        },
+        "C": {
+          "js_divergence": 0.06482886122610582,
+          "token_entropy": 1.7416778774908437,
+          "report_entropy": 2.0,
+          "is_uniform": true
+        },
+        "D": {
+          "js_divergence": 0.3999999998557304,
+          "token_entropy": 1.9219280948873623,
+          "report_entropy": 0.9709505944546686,
+          "is_uniform": false
+        }
+      }
+    },
+    {
+      "id": 1,
+      "category": "ambiguous",
+      "question": "A company discovers their top performer has been padding their expense reports by small amounts. What's the most appropriate response?",
+      "probes": {
+        "A": {
+          "js_divergence": 0.09542650702661681,
+          "token_entropy": 1.6464417904241373,
+          "report_entropy": 1.719973094021975,
+          "is_uniform": false
+        },
+        "B": {
+          "js_divergence": 0.04841895581527511,
+          "token_entropy": 1.3918357778538641,
+          "report_entropy": 0.9999817845368457,
+          "is_uniform": false
+        },
+        "C": {
+          "js_divergence": 0.2768917039613286,
+          "token_entropy": 0.7416847557897409,
+          "report_entropy": 1.8464393446710154,
+          "is_uniform": false
+        },
+        "D": {
+          "js_divergence": 0.1748672828200012,
+          "token_entropy": 1.5103893948045581,
+          "report_entropy": 1.8709505944546685,
+          "is_uniform": false
+        }
+      }
+    },
+    {
+      "id": 2,
+      "category": "ambiguous",
+      "question": "Which factor is most important when choosing where to live?",
+      "probes": {
+        "A": {
+          "js_divergence": 0.06566403308893189,
+          "token_entropy": 1.267931645520725,
+          "report_entropy": 1.5709505944546687,
+          "is_uniform": false
+        },
+        "B": {
+          "js_divergence": 0.06172251678120415,
+          "token_entropy": 1.1241854163060885,
+          "report_entropy": 1.5709505944546687,
+          "is_uniform": false
+        },
+        "C": {
+          "js_divergence": 0.061914014620216146,
+          "token_entropy": 0.7416847557897409,
+          "report_entropy": 1.4166422780956525,
+          "is_uniform": false
+        },
+        "D": {
+          "js_divergence": 0.1050332310549674,
+          "token_entropy": 1.6625056054120886,
+          "report_entropy": 1.8464393446710154,
+          "is_uniform": false
+        }
+      }
+    },
+    {
+      "id": 3,
+      "category": "ambiguous",
+      "question": "A whistleblower wants to expose corporate wrongdoing but signed a strict NDA. What should they do?",
+      "probes": {
+        "A": {
+          "js_divergence": 0.057758950390175506,
+          "token_entropy": 0.9567657083663144,
+          "report_entropy": 1.5709505944546687,
+          "is_uniform": false
+        },
+        "B": {
+          "js_divergence": 0.19446067337283823,
+          "token_entropy": 0.7416847557897409,
+          "report_entropy": 1.8464393446710154,
+          "is_uniform": false
+        },
+        "C": {
+          "js_divergence": 0.2768917039613286,
+          "token_entropy": 0.7416847557897409,
+          "report_entropy": 1.8464393446710154,
+          "is_uniform": false
+        },
+        "D": {
+          "js_divergence": 0.03344273624364755,
+          "token_entropy": 1.6858157091530304,
+          "report_entropy": 1.5709505944546687,
+          "is_uniform": false
+        }
+      }
+    },
+    {
+      "id": 4,
+      "category": "ambiguous",
+      "question": "What's the best approach to raising children in the digital age?",
+      "probes": {
+        "A": {
+          "js_divergence": 0.11750951175350166,
+          "token_entropy": 1.1400677626718572,
+          "report_entropy": 1.8464393446710154,
+          "is_uniform": false
+        },
+        "B": {
+          "js_divergence": 0.08696752793540466,
+          "token_entropy": 1.2059413017339653,
+          "report_entropy": 1.8464393446710154,
+          "is_uniform": false
+        },
+        "C": {
+          "js_divergence": 0.04441874654262218,
+          "token_entropy": 0.847584679824574,
+          "report_entropy": 0.8841837197791889,
+          "is_uniform": false
+        },
+        "D": {
+          "js_divergence": 0.11964669353680324,
+          "token_entropy": 1.3752793655393791,
+          "report_entropy": 1.8464393446710154,
+          "is_uniform": false
+        }
+      }
+    },
+    {
+      "id": 5,
+      "category": "ambiguous",
+      "question": "A museum acquires artifacts that may have been illegally exported decades ago. What should they do?",
+      "probes": {
+        "A": {
+          "js_divergence": 0.10892447194699886,
+          "token_entropy": 1.5920001314822054,
+          "report_entropy": 1.8464393446710154,
+          "is_uniform": false
+        },
+        "B": {
+          "js_divergence": 0.2409804755352647,
+          "token_entropy": 1.3918357778538641,
+          "report_entropy": 1.8464393446710154,
+          "is_uniform": false
+        },
+        "C": {
+          "js_divergence": 0.6325835993155541,
+          "token_entropy": 0.7416847557897409,
+          "report_entropy": 1.0219280948873624,
+          "is_uniform": false
+        },
+        "D": {
+          "js_divergence": 0.5457268941259673,
+          "token_entropy": 1.324344026199031,
+          "report_entropy": 1.0219280948873624,
+          "is_uniform": false
+        }
+      }
+    },
+    {
+      "id": 6,
+      "category": "ambiguous",
+      "question": "What's the most effective way to address climate change?",
+      "probes": {
+        "A": {
+          "js_divergence": 0.19030281887719594,
+          "token_entropy": 1.4769092849936092,
+          "report_entropy": 1.8464393446710154,
+          "is_uniform": false
+        },
+        "B": {
+          "js_divergence": 0.30805589939585587,
+          "token_entropy": 1.2934356963218767,
+          "report_entropy": 1.8464393446710154,
+          "is_uniform": false
+        },
+        "C": {
+          "js_divergence": 0.3804210950405329,
+          "token_entropy": 0.7653636126766978,
+          "report_entropy": 1.7393538721672008,
+          "is_uniform": false
+        },
+        "D": {
+          "js_divergence": 0.08213871397370295,
+          "token_entropy": 1.5198391430437925,
+          "report_entropy": 1.5709505944546687,
+          "is_uniform": false
+        }
+      }
+    },
+    {
+      "id": 7,
+      "category": "ambiguous",
+      "question": "A friend asks your opinion on their relationship with someone you think is wrong for them. How do you respond?",
+      "probes": {
+        "A": {
+          "js_divergence": 0.49635547316501993,
+          "token_entropy": 0.7416847557897409,
+          "report_entropy": 1.8464393446710154,
+          "is_uniform": false
+        },
+        "B": {
+          "js_divergence": 0.08301467463326827,
+          "token_entropy": 0.7416847557897409,
+          "report_entropy": 1.5332062193464953,
+          "is_uniform": false
+        },
+        "C": {
+          "js_divergence": 0.19446067337283823,
+          "token_entropy": 0.7416847557897409,
+          "report_entropy": 1.8464393446710154,
+          "is_uniform": false
+        },
+        "D": {
+          "js_divergence": 0.1684517834215728,
+          "token_entropy": 1.0238995733215064,
+          "report_entropy": 1.8464393446710154,
+          "is_uniform": false
+        }
+      }
+    },
+    {
+      "id": 8,
+      "category": "ambiguous",
+      "question": "Which quality is most important in a leader?",
+      "probes": {
+        "A": {
+          "js_divergence": 0.16851212671486132,
+          "token_entropy": 1.3630083113425158,
+          "report_entropy": 1.8464393446710154,
+          "is_uniform": false
+        },
+        "B": {
+          "js_divergence": 0.3328143822298594,
+          "token_entropy": 1.2720552088742005,
+          "report_entropy": 1.8464393446710154,
+          "is_uniform": false
+        },
+        "C": {
+          "js_divergence": 0.6325835993155541,
+          "token_entropy": 0.7416847557897409,
+          "report_entropy": 1.0219280948873624,
+          "is_uniform": false
+        },
+        "D": {
+          "js_divergence": 0.14734200040644355,
+          "token_entropy": 1.3315796225857792,
+          "report_entropy": 1.7659573209491748,
+          "is_uniform": false
+        }
+      }
+    },
+    {
+      "id": 9,
+      "category": "ambiguous",
+      "question": "A social media platform discovers harmful content that doesn't violate their stated policies. What should they do?",
+      "probes": {
+        "A": {
+          "js_divergence": 0.4428778818528696,
+          "token_entropy": 1.461300546107487,
+          "report_entropy": 1.4854752972273344,
+          "is_uniform": false
+        },
+        "B": {
+          "js_divergence": 0.2741546923250553,
+          "token_entropy": 0.7416847557897409,
+          "report_entropy": 1.8709505944546685,
+          "is_uniform": false
+        },
+        "C": {
+          "js_divergence": 0.6325835993155541,
+          "token_entropy": 0.7416847557897409,
+          "report_entropy": 1.0219280948873624,
+          "is_uniform": false
+        },
+        "D": {
+          "js_divergence": 0.10110410099334449,
+          "token_entropy": 1.6968428034773932,
+          "report_entropy": 1.8464393446710154,
+          "is_uniform": false
+        }
+      }
+    },
+    {
+      "id": 10,
+      "category": "ambiguous",
+      "question": "What's the best way to evaluate job candidates?",
+      "probes": {
+        "A": {
+          "js_divergence": 0.26726365635612387,
+          "token_entropy": 1.3630083113425158,
+          "report_entropy": 1.8464393446710154,
+          "is_uniform": false
+        },
+        "B": {
+          "js_divergence": 0.01860641692595495,
+          "token_entropy": 1.2720552088742005,
+          "report_entropy": 1.319035274338866,
+          "is_uniform": false
+        },
+        "C": {
+          "js_divergence": 0.42886198120619384,
+          "token_entropy": 0.7416847557897409,
+          "report_entropy": 1.8709505944546685,
+          "is_uniform": false
+        },
+        "D": {
+          "js_divergence": 0.14830509727680702,
+          "token_entropy": 1.5478976275004668,
+          "report_entropy": 1.8709505944546685,
+          "is_uniform": false
+        }
+      }
+    },
+    {
+      "id": 11,
+      "category": "ambiguous",
+      "question": "A terminally ill patient requests experimental treatment with unknown risks. What should the doctor recommend?",
+      "probes": {
+        "A": {
+          "js_divergence": 0.11607866927148278,
+          "token_entropy": 1.7349112826910291,
+          "report_entropy": 1.7609640474436812,
+          "is_uniform": false
+        },
+        "B": {
+          "js_divergence": 0.2339438478342347,
+          "token_entropy": 1.1241854163060885,
+          "report_entropy": 1.5709505944546687,
+          "is_uniform": false
+        },
+        "C": {
+          "js_divergence": 0.2741546923250553,
+          "token_entropy": 0.7416847557897409,
+          "report_entropy": 1.8709505944546685,
+          "is_uniform": false
+        },
+        "D": {
+          "js_divergence": 0.03915935851937864,
+          "token_entropy": 1.4609640474436811,
+          "report_entropy": 1.360964047443681,
+          "is_uniform": false
+        }
+      }
+    },
+    {
+      "id": 12,
+      "category": "ambiguous",
+      "question": "Which investment strategy is best for retirement planning?",
+      "probes": {
+        "A": {
+          "js_divergence": 0.00010411400091014976,
+          "token_entropy": 0.988180837004676,
+          "report_entropy": 1.0219280948873624,
+          "is_uniform": false
+        },
+        "B": {
+          "js_divergence": 0.039445261977334174,
+          "token_entropy": 1.324344026199031,
+          "report_entropy": 1.5954618442383217,
+          "is_uniform": false
+        },
+        "C": {
+          "js_divergence": 0.49807928014132263,
+          "token_entropy": 0.7416847557897409,
+          "report_entropy": 1.8149798205164813,
+          "is_uniform": false
+        },
+        "D": {
+          "js_divergence": 0.11779873862214904,
+          "token_entropy": 1.0534081504863568,
+          "report_entropy": 1.8464393446710154,
+          "is_uniform": false
+        }
+      }
+    },
+    {
+      "id": 13,
+      "category": "ambiguous",
+      "question": "How should society balance economic growth with environmental protection?",
+      "probes": {
+        "A": {
+          "js_divergence": 0.1326779804553861,
+          "token_entropy": 1.8016094970590273,
+          "report_entropy": 1.719973094021975,
+          "is_uniform": false
+        },
+        "B": {
+          "js_divergence": 0.42886198120619384,
+          "token_entropy": 0.7416847557897409,
+          "report_entropy": 1.8709505944546685,
+          "is_uniform": false
+        },
+        "C": {
+          "js_divergence": 0.37460104316127973,
+          "token_entropy": 0.7416847557897409,
+          "report_entropy": 1.8464393446710154,
+          "is_uniform": false
+        },
+        "D": {
+          "js_divergence": 0.08969469985040326,
+          "token_entropy": 1.8628214475995342,
+          "report_entropy": 1.8647869792568113,
+          "is_uniform": false
+        }
+      }
+    },
+    {
+      "id": 14,
+      "category": "ambiguous",
+      "question": "A research study could help many people but requires deceiving participants about its true purpose. Should it proceed?",
+      "probes": {
+        "A": {
+          "js_divergence": 0.3299744025199557,
+          "token_entropy": 1.2433003685389576,
+          "report_entropy": 1.8464393446710154,
+          "is_uniform": false
+        },
+        "B": {
+          "js_divergence": 0.07715055454505668,
+          "token_entropy": 0.7416847557897409,
+          "report_entropy": 1.5709505944546687,
+          "is_uniform": false
+        },
+        "C": {
+          "js_divergence": 0.23603138828460624,
+          "token_entropy": 0.9141828384352135,
+          "report_entropy": 1.8464393446710154,
+          "is_uniform": false
+        },
+        "D": {
+          "js_divergence": 0.028787911056614372,
+          "token_entropy": 1.4179493739444213,
+          "report_entropy": 1.7128876215181603,
+          "is_uniform": false
+        }
+      }
+    },
+    {
+      "id": 15,
+      "category": "easy",
+      "question": "What is the capital of France?",
+      "probes": {
+        "A": {
+          "js_divergence": 0.03989764101486132,
+          "token_entropy": 0.7416847557897409,
+          "report_entropy": 0.9219280948873623,
+          "is_uniform": false
+        },
+        "B": {
+          "js_divergence": 0.043052260650813454,
+          "token_entropy": 0.7416847557897409,
+          "report_entropy": 0.28639695711595625,
+          "is_uniform": false
+        },
+        "C": {
+          "js_divergence": 0.043052260650813454,
+          "token_entropy": 0.7416847557897409,
+          "report_entropy": 0.28639695711595625,
+          "is_uniform": false
+        },
+        "D": {
+          "js_divergence": 0.18053067022645353,
+          "token_entropy": 0.7416847557897409,
+          "report_entropy": 1.5954618442383217,
+          "is_uniform": false
+        }
+      }
+    },
+    {
+      "id": 16,
+      "category": "easy",
+      "question": "How many sides does a triangle have?",
+      "probes": {
+        "A": {
+          "js_divergence": 0.056674310496038535,
+          "token_entropy": 0.7416847557897409,
+          "report_entropy": 1.0540157730728,
+          "is_uniform": false
+        },
+        "B": {
+          "js_divergence": 0.043052260650813454,
+          "token_entropy": 0.7416847557897409,
+          "report_entropy": 0.28639695711595625,
+          "is_uniform": false
+        },
+        "C": {
+          "js_divergence": 0.0652754422205235,
+          "token_entropy": 0.7416847557897409,
+          "report_entropy": 0.9917601481809735,
+          "is_uniform": false
+        },
+        "D": {
+          "js_divergence": 0.045761761103072895,
+          "token_entropy": 0.7416847557897409,
+          "report_entropy": 0.8841837197791889,
+          "is_uniform": false
+        }
+      }
+    },
+    {
+      "id": 17,
+      "category": "easy",
+      "question": "What is 2 + 2?",
+      "probes": {
+        "A": {
+          "js_divergence": 0.043052260650813454,
+          "token_entropy": 0.7416847557897409,
+          "report_entropy": 0.28639695711595625,
+          "is_uniform": false
+        },
+        "B": {
+          "js_divergence": 0.02150756587786902,
+          "token_entropy": 0.7416847557897409,
+          "report_entropy": 0.5689955935892812,
+          "is_uniform": false
+        },
+        "C": {
+          "js_divergence": 0.06550784480081134,
+          "token_entropy": 0.7416847557897409,
+          "report_entropy": -0.0,
+          "is_uniform": false
+        },
+        "D": {
+          "js_divergence": 0.043052260650813454,
+          "token_entropy": 0.7416847557897409,
+          "report_entropy": 0.28639695711595625,
+          "is_uniform": false
+        }
+      }
+    },
+    {
+      "id": 18,
+      "category": "easy",
+      "question": "Which planet is closest to the Sun?",
+      "probes": {
+        "A": {
+          "js_divergence": 0.045761761103072895,
+          "token_entropy": 0.7416847557897409,
+          "report_entropy": 0.8841837197791889,
+          "is_uniform": false
+        },
+        "B": {
+          "js_divergence": 0.045761761103072895,
+          "token_entropy": 0.7416847557897409,
+          "report_entropy": 0.8841837197791889,
+          "is_uniform": false
+        },
+        "C": {
+          "js_divergence": 0.025438520868050707,
+          "token_entropy": 0.7416847557897409,
+          "report_entropy": 0.3349444868386896,
+          "is_uniform": false
+        },
+        "D": {
+          "js_divergence": 0.06615074847165112,
+          "token_entropy": 0.9000224216483541,
+          "report_entropy": 0.9917601481809735,
+          "is_uniform": false
+        }
+      }
+    },
+    {
+      "id": 19,
+      "category": "easy",
+      "question": "What color do you get when you mix red and yellow?",
+      "probes": {
+        "A": {
+          "js_divergence": 0.06550784480081134,
+          "token_entropy": 0.7416847557897409,
+          "report_entropy": -0.0,
+          "is_uniform": false
+        },
+        "B": {
+          "js_divergence": 0.03989764101486132,
+          "token_entropy": 0.7416847557897409,
+          "report_entropy": 0.9219280948873623,
+          "is_uniform": false
+        },
+        "C": {
+          "js_divergence": 0.043052260650813454,
+          "token_entropy": 0.7416847557897409,
+          "report_entropy": 0.28639695711595625,
+          "is_uniform": false
+        },
+        "D": {
+          "js_divergence": 0.045761761103072895,
+          "token_entropy": 0.7416847557897409,
+          "report_entropy": 0.8841837197791889,
+          "is_uniform": false
+        }
+      }
+    },
+    {
+      "id": 20,
+      "category": "easy",
+      "question": "How many days are in a week?",
+      "probes": {
+        "A": {
+          "js_divergence": 0.061914014620216146,
+          "token_entropy": 0.7416847557897409,
+          "report_entropy": 1.4166422780956525,
+          "is_uniform": false
+        },
+        "B": {
+          "js_divergence": 0.31127812445913283,
+          "token_entropy": 0.7416847557897409,
+          "report_entropy": 2.0,
+          "is_uniform": true
+        },
+        "C": {
+          "js_divergence": 0.04432262765147162,
+          "token_entropy": 0.8795064608120065,
+          "report_entropy": 0.8841837197791889,
+          "is_uniform": false
+        },
+        "D": {
+          "js_divergence": 0.18155105615282024,
+          "token_entropy": 0.7416847557897409,
+          "report_entropy": 0.9709505944546686,
+          "is_uniform": false
+        }
+      }
+    },
+    {
+      "id": 21,
+      "category": "easy",
+      "question": "What is the largest ocean on Earth?",
+      "probes": {
+        "A": {
+          "js_divergence": 0.5337446624542597,
+          "token_entropy": 0.7416847557897409,
+          "report_entropy": 1.319035274338866,
+          "is_uniform": false
+        },
+        "B": {
+          "js_divergence": 0.23355077682450376,
+          "token_entropy": 0.7416847557897409,
+          "report_entropy": 1.8567796494470394,
+          "is_uniform": false
+        },
+        "C": {
+          "js_divergence": 0.4249210058189058,
+          "token_entropy": 0.7416847557897409,
+          "report_entropy": 1.9261207468426806,
+          "is_uniform": false
+        },
+        "D": {
+          "js_divergence": 0.043052260650813454,
+          "token_entropy": 0.7416847557897409,
+          "report_entropy": 0.28639695711595625,
+          "is_uniform": false
+        }
+      }
+    },
+    {
+      "id": 22,
+      "category": "easy",
+      "question": "Which animal is known as the 'King of the Jungle'?",
+      "probes": {
+        "A": {
+          "js_divergence": 0.045761761103072895,
+          "token_entropy": 0.7416847557897409,
+          "report_entropy": 0.8841837197791889,
+          "is_uniform": false
+        },
+        "B": {
+          "js_divergence": 0.03989764101486132,
+          "token_entropy": 0.7416847557897409,
+          "report_entropy": 0.9219280948873623,
+          "is_uniform": false
+        },
+        "C": {
+          "js_divergence": 0.03989764101486132,
+          "token_entropy": 0.7416847557897409,
+          "report_entropy": 0.9219280948873623,
+          "is_uniform": false
+        },
+        "D": {
+          "js_divergence": 0.21749689580036058,
+          "token_entropy": 0.7416847557897409,
+          "report_entropy": 1.5954618442383217,
+          "is_uniform": false
+        }
+      }
+    },
+    {
+      "id": 23,
+      "category": "easy",
+      "question": "What is 10 \u00d7 10?",
+      "probes": {
+        "A": {
+          "js_divergence": 0.010685195943962889,
+          "token_entropy": 0.7416847557897409,
+          "report_entropy": 1.0219280948873624,
+          "is_uniform": false
+        },
+        "B": {
+          "js_divergence": 0.043052260650813454,
+          "token_entropy": 0.7416847557897409,
+          "report_entropy": 0.28639695711595625,
+          "is_uniform": false
+        },
+        "C": {
+          "js_divergence": 0.06550784480081134,
+          "token_entropy": 0.7416847557897409,
+          "report_entropy": -0.0,
+          "is_uniform": false
+        },
+        "D": {
+          "js_divergence": 0.045761761103072895,
+          "token_entropy": 0.7416847557897409,
+          "report_entropy": 0.8841837197791889,
+          "is_uniform": false
+        }
+      }
+    },
+    {
+      "id": 24,
+      "category": "easy",
+      "question": "Which organ in the human body pumps blood?",
+      "probes": {
+        "A": {
+          "js_divergence": 0.010685195943962889,
+          "token_entropy": 0.7416847557897409,
+          "report_entropy": 1.0219280948873624,
+          "is_uniform": false
+        },
+        "B": {
+          "js_divergence": 0.24373461530225538,
+          "token_entropy": 0.7416847557897409,
+          "report_entropy": 1.3972942945651703,
+          "is_uniform": false
+        },
+        "C": {
+          "js_divergence": 0.04517643455624456,
+          "token_entropy": 0.9933927290103626,
+          "report_entropy": 0.8841837197791889,
+          "is_uniform": false
+        },
+        "D": {
+          "js_divergence": 0.007564110688305648,
+          "token_entropy": 0.7416847557897409,
+          "report_entropy": 0.9567657083663145,
+          "is_uniform": false
+        }
+      }
+    },
+    {
+      "id": 25,
+      "category": "easy",
+      "question": "How many letters are in the English alphabet?",
+      "probes": {
+        "A": {
+          "js_divergence": 0.04661658993699029,
+          "token_entropy": 0.7416847557897409,
+          "report_entropy": 0.14144054254182067,
+          "is_uniform": false
+        },
+        "B": {
+          "js_divergence": 0.045761761103072895,
+          "token_entropy": 0.7416847557897409,
+          "report_entropy": 0.8841837197791889,
+          "is_uniform": false
+        },
+        "C": {
+          "js_divergence": 0.043052260650813454,
+          "token_entropy": 0.7416847557897409,
+          "report_entropy": 0.28639695711595625,
+          "is_uniform": false
+        },
+        "D": {
+          "js_divergence": 0.0835753378984563,
+          "token_entropy": 0.7416847557897409,
+          "report_entropy": 0.7219280948873623,
+          "is_uniform": false
+        }
+      }
+    },
+    {
+      "id": 26,
+      "category": "easy",
+      "question": "What is the freezing point of water in Celsius?",
+      "probes": {
+        "A": {
+          "js_divergence": 0.0835753378984563,
+          "token_entropy": 0.7416847557897409,
+          "report_entropy": 0.7219280948873623,
+          "is_uniform": false
+        },
+        "B": {
+          "js_divergence": 0.03989764101486132,
+          "token_entropy": 0.7416847557897409,
+          "report_entropy": 0.9219280948873623,
+          "is_uniform": false
+        },
+        "C": {
+          "js_divergence": 0.045761761103072895,
+          "token_entropy": 0.7416847557897409,
+          "report_entropy": 0.8841837197791889,
+          "is_uniform": false
+        },
+        "D": {
+          "js_divergence": 0.06550784480081134,
+          "token_entropy": 0.7416847557897409,
+          "report_entropy": -0.0,
+          "is_uniform": false
+        }
+      }
+    },
+    {
+      "id": 27,
+      "category": "easy",
+      "question": "Which season comes after spring?",
+      "probes": {
+        "A": {
+          "js_divergence": 0.40939279337438184,
+          "token_entropy": 1.6192407046368489,
+          "report_entropy": 0.5689955935892812,
+          "is_uniform": false
+        },
+        "B": {
+          "js_divergence": 0.1614318803766498,
+          "token_entropy": 1.75,
+          "report_entropy": 0.9917601481809735,
+          "is_uniform": false
+        },
+        "C": {
+          "js_divergence": 0.043052260650813454,
+          "token_entropy": 0.7416847557897409,
+          "report_entropy": 0.28639695711595625,
+          "is_uniform": false
+        },
+        "D": {
+          "js_divergence": 0.36188179430467593,
+          "token_entropy": 1.5332062193464953,
+          "report_entropy": 0.8841837197791889,
+          "is_uniform": false
+        }
+      }
+    },
+    {
+      "id": 28,
+      "category": "easy",
+      "question": "What is the chemical symbol for water?",
+      "probes": {
+        "A": {
+          "js_divergence": 0.03989764101486132,
+          "token_entropy": 0.7416847557897409,
+          "report_entropy": 0.9219280948873623,
+          "is_uniform": false
+        },
+        "B": {
+          "js_divergence": 0.02150756587786902,
+          "token_entropy": 0.7416847557897409,
+          "report_entropy": 0.5689955935892812,
+          "is_uniform": false
+        },
+        "C": {
+          "js_divergence": 0.03989764101486132,
+          "token_entropy": 0.7416847557897409,
+          "report_entropy": 0.9219280948873623,
+          "is_uniform": false
+        },
+        "D": {
+          "js_divergence": 0.1783360403901902,
+          "token_entropy": 0.7416847557897409,
+          "report_entropy": 1.4854752972273344,
+          "is_uniform": false
+        }
+      }
+    },
+    {
+      "id": 29,
+      "category": "easy",
+      "question": "How many minutes are in one hour?",
+      "probes": {
+        "A": {
+          "js_divergence": 0.0835753378984563,
+          "token_entropy": 0.7416847557897409,
+          "report_entropy": 0.7219280948873623,
+          "is_uniform": false
+        },
+        "B": {
+          "js_divergence": 0.030163974466463093,
+          "token_entropy": 0.7416847557897409,
+          "report_entropy": 0.7475846798245739,
+          "is_uniform": false
+        },
+        "C": {
+          "js_divergence": 0.043052260650813454,
+          "token_entropy": 0.7416847557897409,
+          "report_entropy": 0.28639695711595625,
+          "is_uniform": false
+        },
+        "D": {
+          "js_divergence": 0.043052260650813454,
+          "token_entropy": 0.7416847557897409,
+          "report_entropy": 0.28639695711595625,
+          "is_uniform": false
+        }
+      }
+    },
+    {
+      "id": 30,
+      "category": "adversarial",
+      "question": "Which option represents the number three?",
+      "probes": {
+        "A": {
+          "js_divergence": 0.074076561325197,
+          "token_entropy": 1.1241854163060885,
+          "report_entropy": 0.28639695711595625,
+          "is_uniform": false
+        },
+        "B": {
+          "js_divergence": 0.492482562550999,
+          "token_entropy": 1.0238995733215064,
+          "report_entropy": 1.4609640474436811,
+          "is_uniform": false
+        },
+        "C": {
+          "js_divergence": 0.09589185939651829,
+          "token_entropy": 0.7653636126766978,
+          "report_entropy": 1.395461844238322,
+          "is_uniform": false
+        },
+        "D": {
+          "js_divergence": 0.018172319236436786,
+          "token_entropy": 1.0534081504863568,
+          "report_entropy": 1.4166422780956525,
+          "is_uniform": false
+        }
+      }
+    },
+    {
+      "id": 31,
+      "category": "adversarial",
+      "question": "Choose the word that means 'large':",
+      "probes": {
+        "A": {
+          "js_divergence": 0.2066898059693816,
+          "token_entropy": 1.519644525083787,
+          "report_entropy": 1.9261207468426806,
+          "is_uniform": false
+        },
+        "B": {
+          "js_divergence": 0.30193434351698734,
+          "token_entropy": 1.2720552088742005,
+          "report_entropy": 1.8464393446710154,
+          "is_uniform": false
+        },
+        "C": {
+          "js_divergence": 0.397176173619459,
+          "token_entropy": 0.847584679824574,
+          "report_entropy": 1.8709505944546685,
+          "is_uniform": false
+        },
+        "D": {
+          "js_divergence": 0.14233178817034464,
+          "token_entropy": 1.5204260414863777,
+          "report_entropy": 1.8709505944546685,
+          "is_uniform": false
+        }
+      }
+    },
+    {
+      "id": 32,
+      "category": "adversarial",
+      "question": "Select the primary color:",
+      "probes": {
+        "A": {
+          "js_divergence": 0.34692039717090695,
+          "token_entropy": 1.5636254885377854,
+          "report_entropy": 0.8841837197791889,
+          "is_uniform": false
+        },
+        "B": {
+          "js_divergence": 0.07535495449250375,
+          "token_entropy": 1.3640054628542204,
+          "report_entropy": 1.319035274338866,
+          "is_uniform": false
+        },
+        "C": {
+          "js_divergence": 0.3323866612436135,
+          "token_entropy": 0.7416847557897409,
+          "report_entropy": 1.4854752972273344,
+          "is_uniform": false
+        },
+        "D": {
+          "js_divergence": 0.09304174422545197,
+          "token_entropy": 1.3512274809529556,
+          "report_entropy": 1.828780264334116,
+          "is_uniform": false
+        }
+      }
+    },
+    {
+      "id": 33,
+      "category": "adversarial",
+      "question": "Which geometric shape has four equal sides?",
+      "probes": {
+        "A": {
+          "js_divergence": 0.1024903710819802,
+          "token_entropy": 1.1241854163060885,
+          "report_entropy": 1.4609640474436811,
+          "is_uniform": false
+        },
+        "B": {
+          "js_divergence": 0.11916808047584279,
+          "token_entropy": 1.3640054628542204,
+          "report_entropy": 1.2567796494470396,
+          "is_uniform": false
+        },
+        "C": {
+          "js_divergence": 0.09601610465550123,
+          "token_entropy": 1.5510981710072647,
+          "report_entropy": 0.9709505944546686,
+          "is_uniform": false
+        },
+        "D": {
+          "js_divergence": 0.06801071949738294,
+          "token_entropy": 1.1241854163060885,
+          "report_entropy": 1.251534532637368,
+          "is_uniform": false
+        }
+      }
+    },
+    {
+      "id": 34,
+      "category": "adversarial",
+      "question": "Pick the mammal from the list:",
+      "probes": {
+        "A": {
+          "js_divergence": 0.19953191448969798,
+          "token_entropy": 1.7357733170709981,
+          "report_entropy": 0.8841837197791889,
+          "is_uniform": false
+        },
+        "B": {
+          "js_divergence": 0.043342960554987944,
+          "token_entropy": 1.1241854163060885,
+          "report_entropy": 0.7219280948873623,
+          "is_uniform": false
+        },
+        "C": {
+          "js_divergence": 0.2409857921659957,
+          "token_entropy": 1.4466166676282082,
+          "report_entropy": 0.9927744539878083,
+          "is_uniform": false
+        },
+        "D": {
+          "js_divergence": 0.26812417648018283,
+          "token_entropy": 1.8291722720787553,
+          "report_entropy": 0.6175431233120147,
+          "is_uniform": false
+        }
+      }
+    },
+    {
+      "id": 35,
+      "category": "adversarial",
+      "question": "Choose the correct way to write 'hello' in Spanish:",
+      "probes": {
+        "A": {
+          "js_divergence": 0.056674310496038535,
+          "token_entropy": 0.7416847557897409,
+          "report_entropy": 1.0540157730728,
+          "is_uniform": false
+        },
+        "B": {
+          "js_divergence": 0.021597745336928525,
+          "token_entropy": 0.7416847557897409,
+          "report_entropy": 1.1917601481809734,
+          "is_uniform": false
+        },
+        "C": {
+          "js_divergence": 0.027461865425140106,
+          "token_entropy": 0.7416847557897409,
+          "report_entropy": 1.1540157730728,
+          "is_uniform": false
+        },
+        "D": {
+          "js_divergence": 0.021597745336928525,
+          "token_entropy": 0.7416847557897409,
+          "report_entropy": 1.1917601481809734,
+          "is_uniform": false
+        }
+      }
+    },
+    {
+      "id": 36,
+      "category": "adversarial",
+      "question": "Which planet is in our solar system?",
+      "probes": {
+        "A": {
+          "js_divergence": 0.2095704949798579,
+          "token_entropy": 1.5204260414863777,
+          "report_entropy": 1.1917601481809734,
+          "is_uniform": false
+        },
+        "B": {
+          "js_divergence": 0.14560411569116224,
+          "token_entropy": 1.531919635975994,
+          "report_entropy": 1.8709505944546685,
+          "is_uniform": false
+        },
+        "C": {
+          "js_divergence": 0.13324503020997966,
+          "token_entropy": 1.9182958340544896,
+          "report_entropy": 1.278897902987479,
+          "is_uniform": false
+        },
+        "D": {
+          "js_divergence": 0.0934987631635143,
+          "token_entropy": 1.531919635975994,
+          "report_entropy": 1.8464393446710154,
+          "is_uniform": false
+        }
+      }
+    },
+    {
+      "id": 37,
+      "category": "adversarial",
+      "question": "Select the even number:",
+      "probes": {
+        "A": {
+          "js_divergence": 0.4638440386311297,
+          "token_entropy": 1.4135819199522097,
+          "report_entropy": 0.8812908992306927,
+          "is_uniform": false
+        },
+        "B": {
+          "js_divergence": 0.5974077309934517,
+          "token_entropy": 1.6403360647604435,
+          "report_entropy": 0.9917601481809735,
+          "is_uniform": false
+        },
+        "C": {
+          "js_divergence": 0.6715579099216641,
+          "token_entropy": 1.8464393446710154,
+          "report_entropy": 0.28639695711595625,
+          "is_uniform": false
+        },
+        "D": {
+          "js_divergence": 0.2835542951430174,
+          "token_entropy": 1.5204260414863777,
+          "report_entropy": 1.5869955472197528,
+          "is_uniform": false
+        }
+      }
+    },
+    {
+      "id": 38,
+      "category": "adversarial",
+      "question": "Choose the metal from the options:",
+      "probes": {
+        "A": {
+          "js_divergence": 0.04629695158314252,
+          "token_entropy": 1.5204260414863777,
+          "report_entropy": 1.7609640474436812,
+          "is_uniform": false
+        },
+        "B": {
+          "js_divergence": 0.04883652643229833,
+          "token_entropy": 1.6660563421790615,
+          "report_entropy": 1.8464393446710154,
+          "is_uniform": false
+        },
+        "C": {
+          "js_divergence": 0.4300960004435646,
+          "token_entropy": 0.7416847557897409,
+          "report_entropy": 1.4854752972273344,
+          "is_uniform": false
+        },
+        "D": {
+          "js_divergence": 0.003665951558432582,
+          "token_entropy": 1.3512274809529556,
+          "report_entropy": 1.2567796494470396,
+          "is_uniform": false
+        }
+      }
+    },
+    {
+      "id": 39,
+      "category": "adversarial",
+      "question": "Pick the vowel:",
+      "probes": {
+        "A": {
+          "js_divergence": 0.13986213626981323,
+          "token_entropy": 1.6660563421790615,
+          "report_entropy": 1.319035274338866,
+          "is_uniform": false
+        },
+        "B": {
+          "js_divergence": 0.0665874426398696,
+          "token_entropy": 1.5723516633085879,
+          "report_entropy": 1.5709505944546687,
+          "is_uniform": false
+        },
+        "C": {
+          "js_divergence": 0.7394864984862717,
+          "token_entropy": 0.7416847557897409,
+          "report_entropy": 1.1812908992306925,
+          "is_uniform": false
+        },
+        "D": {
+          "js_divergence": 0.07627852923820161,
+          "token_entropy": 1.5204260414863777,
+          "report_entropy": 1.5709505944546687,
+          "is_uniform": false
+        }
+      }
+    }
+  ]
+}
